@@ -3,15 +3,10 @@
 	<head> 
 		<meta charset="UTF-8">		
  		<title> Tabela Periodica </title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=1920, initial-scale=1.0">
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<header>
-			<li><a href="#">Tabela</a></li>
-			<li><a href="#">Avaliação</a></li>
-			<li><a href="#">Sobre</a></li>
-		</header>
 		<div class="tabela">
 			<div class="empty-space-18""></div>
 			<div class="elemento dois"><button onclick="Modal(0)"><div class="titulo">H</div><div class="texto">Hidrogênio</div></div></button>
@@ -150,6 +145,11 @@
 			<span class="close">&times;</span>
 				<h1 id="elemento"></h1>
 				<p id="numero-atomico"></p>
+				<p id="simbolo"></p>
+				<p id="familia"></p>
+				<p id="massa"></p>
+				<p id="descoberto"></p>
+				<p id="ano-descoberto"></p>
 		</div>
 		</div>
 
@@ -165,6 +165,9 @@
 				]
 				document.querySelector('#elemento').textContent = ''+elementos[z];
 				document.querySelector('#numero-atomico').textContent = 'Número Atômico: '+ (z+1);
+				document.querySelector('#familia').textContent = 'Fámilia: '+ (z+1);
+				document.querySelector('#descoberto').textContent = 'Descoberto por: '+ (z+1);
+				document.querySelector('#ano-descoberto').textContent = 'Descoberto no ano: '+ (z+1);
 				var modal = document.getElementById("myModal");
 				var btn = document.getElementById("myBtn");
 				var span = document.getElementsByClassName("close")[0];
