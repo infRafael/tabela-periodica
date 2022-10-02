@@ -16,13 +16,14 @@ button{
 }
 
 .tabela{
+  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(18, 88px);
   grid-template-rows: repeat(9, 88px);
   grid-gap: 6px;
   margin: auto;
   justify-content: center;
-
+  background: #202e38;
 }
 
 .elemento{
