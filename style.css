@@ -18,6 +18,10 @@ header {
 .navigation {
   margin: 0px;
   float: right;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: arial;
+}
 }
 .navigation li {
   list-style: none;
