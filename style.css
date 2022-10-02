@@ -1,9 +1,18 @@
 body{
   font-family: "Poppins", sans-serif;
-  margin: 100px;
   background: #202e38;
 }
 
+.navbar{
+  background-color:  rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 50px;
+  color: #e8e8e8;
+}
+nav ul li{
+  color: #e8e8e8;
+  text-decoration:none;
+}
 button{
   height: 80px;
   width: 80px;
@@ -173,7 +182,7 @@ button{
 
 .modal-content {
   background-color: #202e38;
-  color: rgb(255, 255, 255);
+  color: #e8e8e8;
   margin-top:15%;
   margin-left: 20%;
   padding: 20px;
@@ -181,10 +190,12 @@ button{
 }
 h1{
   align-items: center;
+  margin-bottom: 10px;
 }
 .close {
   color: #000;
   float: right;
+  text-align: end;
   font-size: 28px;
   font-weight: bold;
 }
