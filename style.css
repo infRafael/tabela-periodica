@@ -7,12 +7,11 @@ a{
   text-decoration: none;
 }
 header {
-  height: 100%;
-  width: 100%;
-  float: left;
+  justify-content: center;
   background: #000000;
   padding: 0 20px;
   color: #fff;
+  display: grid;
 }
 
 li{
@@ -30,7 +29,6 @@ button{
 }
 
 .tabela{
-  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(18, 88px);
   grid-template-rows: repeat(11, 88px);
