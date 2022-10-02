@@ -10,59 +10,14 @@ header {
   height: 100%;
   width: 100%;
   float: left;
-  background: #4CAF50;
+  background: #000000;
   padding: 0 20px;
   color: #fff;
 }
 
-.navigation {
-  margin: 0px;
-  float: right;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: arial;
-}
-}
-.navigation li {
-  list-style: none;
-  float: left;
-}
-.navigation li a {
-  color: #fff;
-  padding: 28px 15px;
-  text-transform: uppercase;
-  text-align: center;
-  display: block;
+li{
   text-decoration: none;
-}
-.navigation li a i {
-  width: 100%;
-  font-size: 20px;
-  margin-bottom: 7px;
-}
-.show-menu-btn,
-.hide-menu-btn {
-  transition: 0.4s;
-  font-size: 30px;
-  cursor: pointer;
-  display: none;
-}
-.show-menu-btn {
-  margin: 0px;
-  float: right;
-}
-.show-menu-btn i {
-  line-height: 100px;
-}
-.navigation a:hover,
-.show-menu-btn:hover,
-.hide-menu-btn:hover {
-  color: #00ff0a;
-}
-#toggle-btn {
-  position: absolute;
-  visibility: hidden;
-  z-index: -1111;
+  font: 500 12px "Poppins";
 }
 
 
