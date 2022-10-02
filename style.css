@@ -19,7 +19,7 @@ button{
   margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(18, 88px);
-  grid-template-rows: repeat(9, 88px);
+  grid-template-rows: repeat(10, 88px);
   grid-gap: 6px;
   margin: auto;
   justify-content: center;
@@ -157,6 +157,9 @@ button{
   grid-column: 12;
 }
 
+.empty-space-18{
+  grid-column: 18;
+}
 .modal {
   display: none;
   position: fixed; 
