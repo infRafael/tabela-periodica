@@ -1,7 +1,7 @@
 body{
-  background: #1c2b2d;
   font-family: "Poppins", sans-serif;
   margin: 100px;
+  background: #202e38;
 }
 
 button{
@@ -172,15 +172,18 @@ button{
 
 
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; 
+  background-color: #202e38;
+  color: rgb(255, 255, 255);
+  margin-top:15%;
+  margin-left: 20%;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%; 
+  width: 60%; 
 }
-
+h1{
+  align-items: center;
+}
 .close {
-  color: #aaa;
+  color: #000;
   float: right;
   font-size: 28px;
   font-weight: bold;
