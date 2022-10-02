@@ -130,7 +130,7 @@ button{
   background: linear-gradient(to bottom right, #788a15 0%, #b6cf26 100%);
 }
 .nove .titulo, .nove .texto{
-  background: -webkit-linear-gradient(#788a15, #b6cf26);
+  background: -webkit-linear-gradient(#788a15, #a5bd1e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
