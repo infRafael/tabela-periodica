@@ -4,12 +4,29 @@
 		<meta charset="UTF-8">		
  		<title> Tabela Periodica </title>
 		<meta name="viewport" content="width=1920, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link rel="stylesheet" href="style.css">
 		
 	</head>
 	<body>
+		<nav class="navbar navbar-expand-lg">
+			<a class="navbar-brand text-white" href="#">Tabela Periódica</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+			  <ul class="navbar-nav">
+				<li class="nav-item">
+				  <a class="nav-link text-white" href="#">Avaliação</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link text-white" href="#">Sobre</a>
+				</li>
+			  </ul>
+			</div>
+		  </nav>
+		
 		<div class="tabela">
-			<div class="empty-space-18""></div>
 			<div class="elemento dois"><button onclick="Modal(0)"><div class="titulo">H</div><div class="texto">Hidrogênio</div></div></button>
 			<div class="empty-space-16""></div>
 			<div class="elemento seis"><button onclick="Modal(1)"><div class="titulo">He</div><div class="texto">Hélio</div></div></button>
@@ -148,7 +165,6 @@
 			<p id="simbolo"></p>
 			<p id="massa"></p>
 			<p id="familia"></p>
-			<p id="descoberto"></p>
 			<p id="ano-descoberto"></p>
 		</div>
 		</div>
