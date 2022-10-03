@@ -1,10 +1,11 @@
 <!doctype html>
-<?php
-	include(conect.php);
-	$sql = "INSERT INTO avaliacoes(nota) VALUES(10)"
-?>
+
 <html>
+	
 	<head> 
+		<?php
+			include(conect.php);
+		?>
 		<meta charset="UTF-8">		
  		<title> Tabela Periodica </title>
 		<meta name="viewport" content="width=1920, initial-scale=1.0">
@@ -164,16 +165,16 @@
 		<div id="myModal" class="modal">
 		<div class="modal-content">
 			<span class="close">&times;</span>
-			<h1 id="elemento"></h1>
-			<p id="numero-atomico"></p>
-			<p id="simbolo"></p>
-			<p id="massa"></p>
-			<p id="familia"></p>
-			<p id="classificacao"></p>
-			<p id="ano-descoberto"></p>
+			<h1 class ="elemento-titulo" id="nome-elemento"></h1>
+			<p class ="informacoes" id="numero-atomico"></p>
+			<p class ="informacoes"id="simbolo"></p>
+			<p class ="informacoes"id="massa"></p>
+			<p class ="informacoes"id="familia"></p>
+			<p class ="informacoes"id="classificacao"></p>
+			<p class ="informacoes"id="ano-descoberto"></p>
 		</div>
 		</div>
-
+		
 		<script type="text/javascript">
 			function Modal(z) {
 				var elementos = ["Hidrogênio","Hélio","Lítio","Berílio","Boro","Carbono","Nitrogênio","Oxigênio", "Flúor", "Neônio","Sódio","Magnésio","Alumínio","Silício","Fósforo",
@@ -211,7 +212,7 @@
 				"Halogênio","Gás nobre","Metal alcalino","Metal alcalino-terroso","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo",
 				"Actinídeo","Actinídeo","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Outro metal",
 				"Outro metal","Outro metal","Outro metal","Halogênio","Gás nobre"];
-				document.querySelector('#elemento').textContent = ''+elementos[z];
+				document.querySelector('#nome-elemento').textContent = ''+elementos[z];
 				document.querySelector('#numero-atomico').textContent = 'Número Atômico: '+ (z+1);
 				document.querySelector('#massa').textContent = 'Massa Atômica: '+ massa[z];
 				document.querySelector('#simbolo').textContent = 'Símbolo: '+ simbolos[z];
@@ -229,6 +230,7 @@
 			  	if (event.target == modal) {
 					modal.style.display = "none";
 			  	}
+				
 			}
 			}
 		</script>
