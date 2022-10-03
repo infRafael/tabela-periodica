@@ -6,5 +6,5 @@
         
         $conexao = new mysqli($dbHost,$dbUsername,$dbPassword,$dbName);
 
-        $sql = "INSERT INTO avaliacoes(nota) VALUES(10)"
+        
 ?>
