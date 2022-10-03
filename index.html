@@ -171,6 +171,7 @@
 			<p class ="informacoes"id="massa"></p>
 			<p class ="informacoes"id="familia"></p>
 			<p class ="informacoes"id="classificacao"></p>
+			<p class ="informacoes"id="quem-descobriu"></p>
 			<p class ="informacoes"id="ano-descoberto"></p>
 		</div>
 		</div>
@@ -212,10 +213,23 @@
 				"Halogênio","Gás nobre","Metal alcalino","Metal alcalino-terroso","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo",
 				"Actinídeo","Actinídeo","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Outro metal",
 				"Outro metal","Outro metal","Outro metal","Halogênio","Gás nobre"];
+				var pessoa = ["Henry Cavendish", "William Ramsay, Norman Lockyer, Per Teodor Clave, Pierre Janssen", "Johan August Arfwedson", "Louis Nicolas Vauquelin, Martin Heinrich Klaproth", "Humphry Davy, Joseph Louis Gay-Lussac, Louis Jacques Thénard", 
+				"Antoine Lavoisier", "Daniel Rutherford", "Antoine Lavoisier, Joseph Priestley, Carl Wihelm Scheele", "Henri Moissan", "William Ramsay, Morris Travers", "Humphry Davy", "Humphry Davy, Joseph Black", "Hans christian osted", "Antoine Lavoisier, Jöns Jacob Berzelius", 
+				"Hennig Brand", "Antoine Lavoisier", "Carl Wilhelm Scheele", "John William Strutt, 3rd Baron Rayleigh, William Ramsay", "Humphry Davy", " Humphry Davy", "Per Teodor Cleve, Lars Fredrik Nilson", "Martin Heinrich Klaproth, William Gregor", "Andrés Manuel del Río", 
+				"Louis Nicolas Vauquelin, Martin Heinrich Klaproth", "Carl Wilhelm Scheele, Johan Gottlieb Gahn, Ignatius Gottfried Kaim", "N/A", "Georg Brandt", "Axel Fredrik Cronstedt", "N/A", "N/A", "Paul-Émile Lecoq de Boisbaudran", "Clemens Winkler", "Albertus Magnus", 
+				"Jöns Jacob Berzelius, Johan Gottlieb Gahn", "Antoine Jérôme Balard, Carl Jacob Löwig", "William Ramsay, Morris Travers", " Gustav Kirchhoff, Robert Bunsen", "Humphry Davy, Adair Crawford, William Cruickshank", "Johan Gadolin", "Martin Heinrich Klaproth", 
+				"Charles Hatchett", "Carl Wilhelm Scheele", "Emilio Segrè, Carlo Perrier", "Karl Ernst Claus", "William Hyde Wollaston", "William Hyde Wollaston", "N/A", "Friedrich Stromeyer, Karl Samuel Leberecht Hermann", "Ferdinand Reich", "N/A", "N/A", 
+				"Martin Heinrich Klaproth, Franz-Joseph Müller von Reichenstein", "Bernard Courtois", "William Ramsay, Morris Travers", "Gustav Kirchhoff, Robert Bunsen", "Humphry Davy, Carl Wilhelm Scheele", "Carl Gustaf Mosander", "Jöns Jacob Berzelius, Martin Heinrich Klaproth, Carl Gustaf Mosander", 
+				"N/A", "N/A", "Jacob A. Marinsky, Charles D. Coryell, Lawrence E. Glendenin", "Paul-Émile Lecoq de Boisbaudran, Eugène-Anatole Demarçay", "Paul-Émile Lecoq de Boisbaudran, Eugène-Anatole Demarçay", "Paul-Émile Lecoq de Boisbaudran, Jean Charles Galissard de Marignac", "Carl Gustaf Mosander", "Paul-Émile Lecoq de Boisbaudran", "Per Teodor Cleve, Marc Delafontaine, Jacques-Louis Soret", 
+				"Carl Gustaf Mosander", "Per Teodor Cleve", "Jean Charles Galissard de Marignac", "N/A", "George de Hevesy, Dirk Coster", "N/A", "Carl Wilhelm Scheele", "Walter Noddack, Ida Noddack, Otto Berg", "Smithson Tennant", "Smithson Tennant", "Antonio de Ulloa", "N/A", "N/A", "N/A", "N/A", "Claude François Geoffroy", "Marie Curie, Pierre Curie", "Emilio Segrè", "N/A", "N/A", "Marie Curie, Pierre Curie", 
+				"André-Louis Debierne", "Jöns Jacob Berzelius", "N/A", "Martin Heinrich Klaproth", "Edwin McMillan, Philip Abelson", "Glenn T. Seaborg, Edwin McMillan, Arthur Wahl, Joseph W. Kennedy", "Glenn T. Seaborg, Albert Ghiorso, Ralph A. James", " Glenn T. Seaborg, Albert Ghiorso, Ralph A. James", "Glenn T. Seaborg, Albert Ghiorso", "Glenn T. Seaborg, Albert Ghiorso",
+				"Glenn T. Seaborg, Albert Ghiorso", "Glenn T. Seaborg, Albert Ghiorso", "Glenn T. Seaborg, Albert Ghiorso", "Glenn T. Seaborg, Joint Institute for Nuclear Research", "Albert Ghiorso", "Albert Ghiorso, Joint Institute for Nuclear Research", "Albert Ghiorso, Joint Institute for Nuclear Research", "N/A", "N/A", "N/A", "N/A", "Sigurd Hofmann", 
+				"Victor Ninov, Sigurd Hofmann", "Victor Ninov, Sigurd Hofmann", "N/A", "Yuri Oganessian, Sigurd Hofmann, Flerov Laboratory of Nuclear Reactions", "Joint Institute for Nuclear Research", "Joint Institute for Nuclear Research, Yuri Oganessian", "Joint Institute for Nuclear Research, Yuri Oganessian", "Joint Institute for Nuclear Research, Yuri Oganessian"];
 				document.querySelector('#nome-elemento').textContent = ''+elementos[z];
 				document.querySelector('#numero-atomico').textContent = 'Número Atômico: '+ (z+1);
 				document.querySelector('#massa').textContent = 'Massa Atômica: '+ massa[z];
 				document.querySelector('#simbolo').textContent = 'Símbolo: '+ simbolos[z];
+				document.querySelector('#quem-descobriu').textContent = 'Descoberto por: '+ pessoa[z];
 				document.querySelector('#ano-descoberto').textContent = 'Descoberto em: '+ ano[z];
 				document.querySelector('#familia').textContent = 'Família: '+ familia[z];
 				document.querySelector('#classificacao').textContent = 'Classificação: '+ classificacao[z];
