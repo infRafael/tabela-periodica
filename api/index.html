@@ -1,0 +1,252 @@
+<!doctype html>
+
+<html>
+	
+	<head> 
+		<?php
+			include(conect.php);
+		?>
+		<meta charset="UTF-8">		
+ 		<title> Tabela Periodica </title>
+		<meta name="viewport" content="width=1920, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="style.css">
+		
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg">
+			<a class="navbar-brand text-white" href="index.html">Tabela Periódica</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+			  <ul class="navbar-nav">
+				<li class="nav-item">
+				  <a class="nav-link text-white" href="avaliacao.html">Avaliação</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link text-white" href="sobre.html">Sobre</a>
+				</li>
+			  </ul>
+			</div>
+		  </nav>
+		
+		<div class="tabela">
+			<div class="elemento dois"><button onclick="Modal(0)"><div class="titulo">H</div><div class="texto">Hidrogênio</div></div></button>
+			<div class="empty-space-16""></div>
+			<div class="elemento seis"><button onclick="Modal(1)"><div class="titulo">He</div><div class="texto">Hélio</div></div></button>
+			<div class="elemento tres"><button onclick="Modal(2)"><div class="titulo">Li</div><div class="texto">Lítio</div></div></button>
+			<div class="elemento quatro"><button onclick="Modal(3)"><div class="titulo">Be</div><div class="texto">Berílio</div></div></button>
+			<div class="empty-space-10""></div>
+			<div class="elemento dez"><button onclick="Modal(4)"><div class="titulo">B</div><div class="texto">Boro</div></div></button>
+			<div class="elemento dois"><button onclick="Modal(5)"><div class="titulo">C</div><div class="texto">Carbono</div></div></button>
+			<div class="elemento dois"><button onclick="Modal(6)"><div class="titulo">N</div><div class="texto">Nitrogênio</div></div></button>
+			<div class="elemento dois"><button onclick="Modal(7)"><div class="titulo">O</div><div class="texto">Oxigênio</div></div></button>
+			<div class="elemento dois"><button onclick="Modal(8)"><div class="titulo">F</div><div class="texto">Flúor</div></div></button>
+			<div class="elemento seis"><button onclick="Modal(9)"><div class="titulo">Ne</div><div class="texto">Neônio</div></div></button>
+			<div class="elemento tres"><button onclick="Modal(10)"><div class="titulo">Na</div><div class="texto">Sódio</div></div></button>
+			<div class="elemento quatro"><button onclick="Modal(11)"><div class="titulo">Mg</div><div class="texto">Magnésio</div></div></button>
+			<div class="empty-space-10""></div>
+			<div class="elemento nove"><button onclick="Modal(12)"><div class="titulo">Al</div><div class="texto">Alumínio</div></div></button>
+			<div class="elemento dez"><button onclick="Modal(13)"><div class="titulo">Si</div><div class="texto">Silício</div></div></button>
+			<div class="elemento dois"><button onclick="Modal(14)"><div class="titulo">P</div><div class="texto">Fósforo</div></div></button>
+			<div class="elemento dois"><button onclick="Modal(15)"><div class="titulo">S</div><div class="texto">Enxofre</div></div></button>
+			<div class="elemento dois"><button onclick="Modal(16)"><div class="titulo">Cl</div><div class="texto">Cloro</div></div></button>
+			<div class="elemento seis"><button onclick="Modal(17)"><div class="titulo">Ar</div><div class="texto">Argônio</div></div></button>
+			<div class="elemento tres"><button onclick="Modal(18)"><div class="titulo">K</div><div class="texto">Potássio</div></div></button>
+			<div class="elemento quatro"><button onclick="Modal(19)"><div class="titulo">Ca</div><div class="texto">Cálcio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(20)"><div class="titulo">Sc</div><div class="texto">Escândio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(21)"><div class="titulo">Ti</div><div class="texto">Titânio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(22)"><div class="titulo">V</div><div class="texto">Vanádio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(23)"><div class="titulo">Cr</div><div class="texto">Crômio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(24)"><div class="titulo">Mn</div><div class="texto">Manganês</div></div></button>
+			<div class="elemento um"><button onclick="Modal(25)"><div class="titulo">Fe</div><div class="texto">Ferro</div></div></button>
+			<div class="elemento um"><button onclick="Modal(26)"><div class="titulo">Co</div><div class="texto">Cobalto</div></div></button>
+			<div class="elemento um"><button onclick="Modal(27)"><div class="titulo">Ni</div><div class="texto">Niquel</div></div></button>
+			<div class="elemento um"><button onclick="Modal(28)"><div class="titulo">Cu</div><div class="texto">Cobre</div></div></button>
+			<div class="elemento nove"><button onclick="Modal(29)"><div class="titulo">Zn</div><div class="texto">Zinco</div></div></button>
+			<div class="elemento nove"><button onclick="Modal(30)"><div class="titulo">Ga</div><div class="texto">Gálio</div></div></button>
+			<div class="elemento dez"><button onclick="Modal(31)"><div class="titulo">Ge</div><div class="texto">Germânio</div></div></button>
+			<div class="elemento dez"><button onclick="Modal(32)"><div class="titulo">As</div><div class="texto">Arsênio</div></div></button>
+			<div class="elemento dois"><button onclick="Modal(33)"><div class="titulo">Se</div><div class="texto">Selênio</div></div></button>
+			<div class="elemento dois"><button onclick="Modal(34)"><div class="titulo">Br</div><div class="texto">Bromo</div></div></button>
+			<div class="elemento seis"><button onclick="Modal(35)"><div class="titulo">Kr</div><div class="texto">Criptônio</div></div></button>
+			<div class="elemento tres"><button onclick="Modal(36)"><div class="titulo">Rb</div><div class="texto">Rubídio</div></div></button>
+			<div class="elemento quatro"><button onclick="Modal(37)"><div class="titulo">Sr</div><div class="texto">Estrôncio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(38)"><div class="titulo">Y</div><div class="texto">Ítrio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(39)"><div class="titulo">Zr</div><div class="texto">Zircônico</div></div></button>
+			<div class="elemento um"><button onclick="Modal(40)"><div class="titulo">Nb</div><div class="texto">Nióbio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(41)"><div class="titulo">Mo</div><div class="texto">Molibdênio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(42)"><div class="titulo">Tc</div><div class="texto">Tecnécio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(43)"><div class="titulo">Ru</div><div class="texto">Rutênio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(44)"><div class="titulo">Rh</div><div class="texto">Ródio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(45)"><div class="titulo">Pd</div><div class="texto">Paládio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(46)"><div class="titulo">Ag</div><div class="texto">Prata</div></div></button>
+			<div class="elemento nove"><button onclick="Modal(47)"><div class="titulo">Cd</div><div class="texto">Cádmio</div></div></button>
+			<div class="elemento nove"><button onclick="Modal(48)"><div class="titulo">In</div><div class="texto">Índio</div></div></button>
+			<div class="elemento nove"><button onclick="Modal(49)"><div class="titulo">Sn</div><div class="texto">Estanho</div></div></button>
+			<div class="elemento dez"><button onclick="Modal(50)"><div class="titulo">Sb</div><div class="texto">Antimônio</div></div></button>
+			<div class="elemento dez"><button onclick="Modal(51)"><div class="titulo">Te</div><div class="texto">Telúrio</div></div></button>
+			<div class="elemento dois"><button onclick="Modal(52)"><div class="titulo">I</div><div class="texto">Iodo</div></div></button>
+			<div class="elemento seis"><button onclick="Modal(53)"><div class="titulo">Xe</div><div class="texto">Xenônio</div></div></button>
+			<div class="elemento tres"><button onclick="Modal(54)"><div class="titulo">Cs</div><div class="texto">Césio</div></div></button>
+			<div class="elemento quatro"><button onclick="Modal(55)"><div class="titulo">Ba</div><div class="texto">Bário</div></div></button>
+			<div class="elemento sete"><button onclick=""><div class="texto3">Lantanídeo</div><div class="texto">57-71</div></div></button>
+			<div class="elemento um"><button onclick="Modal(71)"><div class="titulo">Hf</div><div class="texto">Háfnio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(72)"><div class="titulo">Ta</div><div class="texto">Tântalo</div></div></button>
+			<div class="elemento um"><button onclick="Modal(73)"><div class="titulo">W</div><div class="texto">Tungstênio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(74)"><div class="titulo">Re</div><div class="texto">Rênio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(75)"><div class="titulo">Os</div><div class="texto">Ósmio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(76)"><div class="titulo">Ir</div><div class="texto">Irídio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(77)"><div class="titulo">Pt</div><div class="texto">Platina</div></div></button>
+			<div class="elemento um"><button onclick="Modal(78)"><div class="titulo">Au</div><div class="texto">Ouro</div></div></button>
+			<div class="elemento nove"><button onclick="Modal(79)"><div class="titulo">Hg</div><div class="texto">Mercurio</div></div></button>
+			<div class="elemento nove"><button onclick="Modal(80)"><div class="titulo">Tl</div><div class="texto">Tálio</div></div></button>
+			<div class="elemento nove"><button onclick="Modal(81)"><div class="titulo">Pb</div><div class="texto">Chumbo</div></div></button>
+			<div class="elemento nove"><button onclick="Modal(82)"><div class="titulo">Bi</div><div class="texto">Bismuto</div></div></button>
+			<div class="elemento nove"><button onclick="Modal(83)"><div class="titulo">Po</div><div class="texto">Polônio</div></div></button>
+			<div class="elemento nove"><button onclick="Modal(84)"><div class="titulo">At</div><div class="texto">Astato</div></div></button>
+			<div class="elemento seis"><button onclick="Modal(85)"><div class="titulo">Rn</div><div class="texto">Randônio</div></div></button>
+			<div class="elemento tres"><button onclick="Modal(86)"><div class="titulo">Fr</div><div class="texto">Frâncio</div></div></button>
+			<div class="elemento quatro"><button onclick="Modal(87)"><div class="titulo">Ra</div><div class="texto">Rádio</div></div></button>
+			<div class="elemento oito"><button onclick=""><div class="texto2">Actinídeo</div><div class="texto">89-103</div></div></button>
+			<div class="elemento um"><button onclick="Modal(103)"><div class="titulo">Rf</div><div class="texto">Rutherfórdio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(104)"><div class="titulo">Db</div><div class="texto">Dúbnio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(105)"><div class="titulo">Sg</div><div class="texto">Seaborgio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(106)"><div class="titulo">Bh</div><div class="texto">Bóhrio</div></div></button>
+			<div class="elemento um"><button onclick="Modal(107)"><div class="titulo">Hs</div><div class="texto">Hássio</div></div></button>
+			<div class="elemento cinco"><button onclick="Modal(108)"><div class="titulo">Mt</div><div class="texto">Meitnério</div></div></button>
+			<div class="elemento cinco"><button onclick="Modal(109)"><div class="titulo">Ds</div><div class="texto">Darmstádtio</div></div></button>
+			<div class="elemento cinco"><button onclick="Modal(110)"><div class="titulo">Rg</div><div class="texto">Roentgênio</div></div></button>
+			<div class="elemento cinco"><button onclick="Modal(111)"><div class="titulo">Cn</div><div class="texto">Copernício</div></div></button>
+			<div class="elemento cinco"><button onclick="Modal(112)"><div class="titulo">Nh</div><div class="texto">Nihônio</div></div></button>
+			<div class="elemento cinco"><button onclick="Modal(113)"><div class="titulo">Fl</div><div class="texto">Fleróvio</div></div></button>
+			<div class="elemento cinco"><button onclick="Modal(114)"><div class="titulo">Mc</div><div class="texto">Moscóvio</div></div></button>
+			<div class="elemento cinco"><button onclick="Modal(115)"><div class="titulo">Lv</div><div class="texto">Livermório</div></div></button>
+			<div class="elemento cinco"><button onclick="Modal(116)"><div class="titulo">Ts</div><div class="texto">Tenessino</div></div></button>
+			<div class="elemento cinco"><button onclick="Modal(117)"><div class="titulo">Og</div><div class="texto">Oganessônio</div></div></button>
+			<div class="empty-space""></div>
+			<div class="empty-space""></div>
+			<div class="empty-space""></div>
+			<div class="elemento sete"><button onclick="Modal(56)"><div class="titulo">La</div><div class="texto">Lantânio</div></div></button>
+			<div class="elemento sete"><button onclick="Modal(57)"><div class="titulo">Ce</div><div class="texto">Cério</div></div></button>
+			<div class="elemento sete"><button onclick="Modal(58)"><div class="titulo">Pr</div><div class="texto">Praseodimio</div></div></button>
+			<div class="elemento sete"><button onclick="Modal(59)"><div class="titulo">Nd</div><div class="texto">Neodímio</div></div></button>
+			<div class="elemento sete"><button onclick="Modal(60)"><div class="titulo">Pm</div><div class="texto">Promécio</div></div></button>
+			<div class="elemento sete"><button onclick="Modal(61)"><div class="titulo">Sm</div><div class="texto">Samário</div></div></button>
+			<div class="elemento sete"><button onclick="Modal(62)"><div class="titulo">Eu</div><div class="texto">Európio</div></div></button>
+			<div class="elemento sete"><button onclick="Modal(63)"><div class="titulo">Gd</div><div class="texto">Gadolínio</div></div></button>
+			<div class="elemento sete"><button onclick="Modal(64)"><div class="titulo">Tb</div><div class="texto">Térbio</div></div></button>
+			<div class="elemento sete"><button onclick="Modal(65)"><div class="titulo">Dy</div><div class="texto">Disprósio</div></div></button>
+			<div class="elemento sete"><button onclick="Modal(66)"><div class="titulo">Ho</div><div class="texto">Hólmio</div></div></button>
+			<div class="elemento sete"><button onclick="Modal(67)"><div class="titulo">Er</div><div class="texto">Érbio</div></div></button>
+			<div class="elemento sete"><button onclick="Modal(68)"><div class="titulo">Tm</div><div class="texto">Túlio</div></div></button>
+			<div class="elemento sete"><button onclick="Modal(69)"><div class="titulo">Yb</div><div class="texto">Itérbio</div></div></button>
+			<div class="elemento sete"><button onclick="Modal(70)"><div class="titulo">Lu</div><div class="texto">Lutécio</div></div></button>
+			<div class="empty-space""></div>
+			<div class="empty-space""></div>
+			<div class="empty-space""></div>
+			<div class="elemento oito"><button onclick="Modal(88)"><div class="titulo">Ac</div><div class="texto">Actínio</div></div></button>
+			<div class="elemento oito"><button onclick="Modal(89)"><div class="titulo">Th</div><div class="texto">Tório</div></div></button>
+			<div class="elemento oito"><button onclick="Modal(90)"><div class="titulo">Pa</div><div class="texto">Protactínio</div></div></button>
+			<div class="elemento oito"><button onclick="Modal(91)"><div class="titulo">U</div><div class="texto">Urânio</div></div></button>
+			<div class="elemento oito"><button onclick="Modal(92)"><div class="titulo">Np</div><div class="texto">Netúnio</div></div></button>
+			<div class="elemento oito"><button onclick="Modal(93)"><div class="titulo">Pu</div><div class="texto">Plutônio</div></div></button>
+			<div class="elemento oito"><button onclick="Modal(94)"><div class="titulo">Am</div><div class="texto">Amerício</div></div></button>
+			<div class="elemento oito"><button onclick="Modal(95)"><div class="titulo">Cm</div><div class="texto">Cúrio</div></div></button>
+			<div class="elemento oito"><button onclick="Modal(96)"><div class="titulo">Bk</div><div class="texto">Berquélio</div></div></button>
+			<div class="elemento oito"><button onclick="Modal(97)"><div class="titulo">Cf</div><div class="texto">Califórnio</div></div></button>
+			<div class="elemento oito"><button onclick="Modal(98)"><div class="titulo">Es</div><div class="texto">Einstênio</div></div></button>
+			<div class="elemento oito"><button onclick="Modal(99)"><div class="titulo">Fm</div><div class="texto">Férmio</div></div></button>
+			<div class="elemento oito"><button onclick="Modal(100)"><div class="titulo">Md</div><div class="texto">Mendelévio</div></div></button>
+			<div class="elemento oito"><button onclick="Modal(101)"><div class="titulo">No</div><div class="texto">Nobélio</div></div></button>
+			<div class="elemento oito"><button onclick="Modal(102)"><div class="titulo">Lr</div><div class="texto">Laurêncio</div></div></button>
+		</div>
+		<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h1 class ="elemento-titulo" id="nome-elemento"></h1>
+			<p class ="informacoes" id="numero-atomico"></p>
+			<p class ="informacoes"id="simbolo"></p>
+			<p class ="informacoes"id="massa"></p>
+			<p class ="informacoes"id="familia"></p>
+			<p class ="informacoes"id="classificacao"></p>
+			<p class ="informacoes"id="quem-descobriu"></p>
+			<p class ="informacoes"id="ano-descoberto"></p>
+		</div>
+		</div>
+		
+		<script type="text/javascript">
+			function Modal(z) {
+				var elementos = ["Hidrogênio","Hélio","Lítio","Berílio","Boro","Carbono","Nitrogênio","Oxigênio", "Flúor", "Neônio","Sódio","Magnésio","Alumínio","Silício","Fósforo",
+				"Enxofre","Cloro","Argônio","Potássio","Cálcio","Escândio","Titânio","Vanádio","Crômio","Manganês","Ferro","Cobalto","Níquel","Cobre","Zinco","Gálio","Germânio","Arsênio",
+				"Selênio","Bromo","Criptônio","Rubídio","Estrôncio","Ítrio","Zircônico","Nióbio","Molibdênio","Tecnécio","Rutênio","Ródio","Paládio","Prata","Cádmio","Índio","Estanho","Antimônio",
+				"Telúrio","Iodo","Xenônio","Césio","Bário","Lantânio","Cério","Praseodimio","Neodímio","Promécio","Samário","Európio","Gadolínio","Térbio","Disprósio","Hólmio","Érbio","Túlio","Itérbio",
+				"Lutécio","Háfnio","Tântalo","Tungstênio","Rênio","Ósmio","Irídio","Platina","Ouro","Mercurio","Tálio","Chumbo","Bismuto","Polônio","Astato","Randônio","Frâncio","Rádio",
+				"Actínio","Tório","Protactínio","Urânio","Netúnio","Plutônio","Amerício","Cúrio","Berquélio","Califórnio","Einstênio","Férmio","Mendelévio","Nobélio","Laurêncio",
+				"Rutherfórdio","Dúbnio","Seaborgio","Bóhrio","Hássio","Meitnério","Darmstádtio","Roentgênio","Copernício","Nihônio","Fleróvio","Moscóvio","Livermório","Tenessino","Oganessônio"];
+				var simbolos = ["H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl","Ar","K","Ca","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Ga","Ge","As","Se","Br",
+				"Kr","Rb","Sr","Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd","In","Sn","Sb","Te","I","Xe","Cs","Ba","La","Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu","Hf",
+				"Ta","W","Re","Os","Ir","Pt","Au","Hg","Tl","Pb","Bi","Po","At","Rn","Fr","Ra","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr","Rf","Db","Sg","Bh","Hs","Mt",
+				"Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"];
+				var massa = ["1","4","6.94","9.01","10.81","12.01","14","15.99","18.99","20.18","22.99","24.30","26.98","28.08","30.97","32.06","35.45","39.94","39.09","40.07","44.95","47.86","50.94",
+				"51.99","54.93","55.84","58.93","58.69","63.54","65.94","69.72","72.64","74.92","78.96","79.90","83.79","85.46","87.62","88.90","91.22","92.90","95.94","98","101.7","102.90","106.42",
+				"107.82","112.41","114.81","118.71","121.76","127.6","126.90","131.29","132.90","137.32","138.90","140.11","140.90","144.24","145","150.36","151.96","157.25","158.92","162.5","164.93",
+				"167.25","168.93","173.04","174.96","178.49","180.94","183.84","186.20","190.23","192.21","195.08","196.96","200.59","204",".38","207.2","208.98","210","210","220","223","226","227",
+				"232.03","231.03","238.02","237","244","243","247","247","251","252","257","258","259","262","261","262","266","264","277","268","271","272","277","286","289","288","293","294","294"];
+				var ano = ["1766","1868","1817","1797","1808","N/A","1772","1774","1868","1898","1807","1755","1825","1823","1669","N/A","1774","1894","1807","1808","1879","1791","1801","1797","1774",
+				"N/A","1735","1751","9000AC","1746","1875","1886","1250","1817","1826","1898","1861","1790","1794","1789","1801","1778","1937","1844","1803","1803","N/A","1817","1863","N/A","1600AC",
+				"1782","1811","1898","1860","1808","1839","1803","1885","1885","1945","1879","1901","1880","1843","1886","1878","1843","1879","1878","1907","1923","1802","1783","1925","1803","1803","1735",
+				"N/A","N/A","1861","N/A","1753","1898","1940","1900","1939","1898","1899","1828","1913","1789","1940","1940","1944","1944","1949","1950","1952","1953","1955","1958","1961","1964","1967","1974"
+				,"1981","1984","1982","1994","1994","1996","2003","1998","2003","2000","2010","2006"];
+				var familia = ["1a","8a","1a","2a","3a","4a","5a","6a","7a","8a","1a","2a","3a","4a","5a","6a","7a","8a","1a","2a","3b","4b","5b","6b","7b","8b","8b","8b","1b","2b","3a","4a","5a","6a","7a",
+				"8a","1a","2a","3b","4b","5b","6b","7b","8b","8b","8b","1b","2b","3a","4a","5a","6a","7a","8a","1a","2a","3b","3b","3b","3b","3b","3b","3b","3b","3b","3b","3b","3b","3b","3b","3b","4b","5b","6b",
+				"7b","8b","8b","8b","1b","2b","3a","4a","5a","6a","7a","8a","1a","2a","3b","3b","3b","3b","3b","3b","3b","3b","3b","3b","3b","3b","3b","3b","3b","4b","5b","6b","7b","8b","8b","8b","1b","2b","3a",
+				"4a","5a","6a","7a","8a"];
+				var classificacao = ["Não metal","Gás nobre","Metal alcalino","Metal alcalino-terroso","Semimetal","Não metal","Não metal","Não metal","Halogênio","Gás nobre"
+				,"Metal alcalino","Metal alcalino-terroso","Outro metal","Semimetal","Não metal","Não metal","Halogênio","Gás nobre","Metal alcalino","Metal alcalino-terroso","Metal de transição","Metal de transição",
+				"Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Outro metal","Semimetal","Semimetal",
+				"Não metal","Halogênio","Gás nobre","Metal alcalino","Metal alcalino-terroso","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição",
+				"Metal de transição","Metal de transição","Metal de transição","Metal de transição","Outro metal","Outro metal","Semimetal","Semimetal","Halogênio","Gás nobre","Metal alcalino","Metal alcalino-terroso","Lantanídeo",
+				"Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","LantanídeoLantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Metal de transição",
+				"Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Outro metal","Outro metal","Outro metal","Semimetal",
+				"Halogênio","Gás nobre","Metal alcalino","Metal alcalino-terroso","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo",
+				"Actinídeo","Actinídeo","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Outro metal",
+				"Outro metal","Outro metal","Outro metal","Halogênio","Gás nobre"];
+				var pessoa = ["Henry Cavendish", "William Ramsay, Norman Lockyer, Per Teodor Clave, Pierre Janssen", "Johan August Arfwedson", "Louis Nicolas Vauquelin, Martin Heinrich Klaproth", "Humphry Davy, Joseph Louis Gay-Lussac, Louis Jacques Thénard", 
+				"Antoine Lavoisier", "Daniel Rutherford", "Antoine Lavoisier, Joseph Priestley, Carl Wihelm Scheele", "Henri Moissan", "William Ramsay, Morris Travers", "Humphry Davy", "Humphry Davy, Joseph Black", "Hans christian osted", "Antoine Lavoisier, Jöns Jacob Berzelius", 
+				"Hennig Brand", "Antoine Lavoisier", "Carl Wilhelm Scheele", "John William Strutt, 3rd Baron Rayleigh, William Ramsay", "Humphry Davy", " Humphry Davy", "Per Teodor Cleve, Lars Fredrik Nilson", "Martin Heinrich Klaproth, William Gregor", "Andrés Manuel del Río", 
+				"Louis Nicolas Vauquelin, Martin Heinrich Klaproth", "Carl Wilhelm Scheele, Johan Gottlieb Gahn, Ignatius Gottfried Kaim", "N/A", "Georg Brandt", "Axel Fredrik Cronstedt", "N/A", "N/A", "Paul-Émile Lecoq de Boisbaudran", "Clemens Winkler", "Albertus Magnus", 
+				"Jöns Jacob Berzelius, Johan Gottlieb Gahn", "Antoine Jérôme Balard, Carl Jacob Löwig", "William Ramsay, Morris Travers", " Gustav Kirchhoff, Robert Bunsen", "Humphry Davy, Adair Crawford, William Cruickshank", "Johan Gadolin", "Martin Heinrich Klaproth", 
+				"Charles Hatchett", "Carl Wilhelm Scheele", "Emilio Segrè, Carlo Perrier", "Karl Ernst Claus", "William Hyde Wollaston", "William Hyde Wollaston", "N/A", "Friedrich Stromeyer, Karl Samuel Leberecht Hermann", "Ferdinand Reich", "N/A", "N/A", 
+				"Martin Heinrich Klaproth, Franz-Joseph Müller von Reichenstein", "Bernard Courtois", "William Ramsay, Morris Travers", "Gustav Kirchhoff, Robert Bunsen", "Humphry Davy, Carl Wilhelm Scheele", "Carl Gustaf Mosander", "Jöns Jacob Berzelius, Martin Heinrich Klaproth, Carl Gustaf Mosander", 
+				"N/A", "N/A", "Jacob A. Marinsky, Charles D. Coryell, Lawrence E. Glendenin", "Paul-Émile Lecoq de Boisbaudran, Eugène-Anatole Demarçay", "Paul-Émile Lecoq de Boisbaudran, Eugène-Anatole Demarçay", "Paul-Émile Lecoq de Boisbaudran, Jean Charles Galissard de Marignac", "Carl Gustaf Mosander", "Paul-Émile Lecoq de Boisbaudran", "Per Teodor Cleve, Marc Delafontaine, Jacques-Louis Soret", 
+				"Carl Gustaf Mosander", "Per Teodor Cleve", "Jean Charles Galissard de Marignac", "N/A", "George de Hevesy, Dirk Coster", "N/A", "Carl Wilhelm Scheele", "Walter Noddack, Ida Noddack, Otto Berg", "Smithson Tennant", "Smithson Tennant", "Antonio de Ulloa", "N/A", "N/A", "N/A", "N/A", "Claude François Geoffroy", "Marie Curie, Pierre Curie", "Emilio Segrè", "N/A", "N/A", "Marie Curie, Pierre Curie", 
+				"André-Louis Debierne", "Jöns Jacob Berzelius", "N/A", "Martin Heinrich Klaproth", "Edwin McMillan, Philip Abelson", "Glenn T. Seaborg, Edwin McMillan, Arthur Wahl, Joseph W. Kennedy", "Glenn T. Seaborg, Albert Ghiorso, Ralph A. James", " Glenn T. Seaborg, Albert Ghiorso, Ralph A. James", "Glenn T. Seaborg, Albert Ghiorso", "Glenn T. Seaborg, Albert Ghiorso",
+				"Glenn T. Seaborg, Albert Ghiorso", "Glenn T. Seaborg, Albert Ghiorso", "Glenn T. Seaborg, Albert Ghiorso", "Glenn T. Seaborg, Joint Institute for Nuclear Research", "Albert Ghiorso", "Albert Ghiorso, Joint Institute for Nuclear Research", "Albert Ghiorso, Joint Institute for Nuclear Research", "N/A", "N/A", "N/A", "N/A", "Sigurd Hofmann", 
+				"Victor Ninov, Sigurd Hofmann", "Victor Ninov, Sigurd Hofmann", "N/A", "Yuri Oganessian, Sigurd Hofmann, Flerov Laboratory of Nuclear Reactions", "Joint Institute for Nuclear Research", "Joint Institute for Nuclear Research, Yuri Oganessian", "Joint Institute for Nuclear Research, Yuri Oganessian", "Joint Institute for Nuclear Research, Yuri Oganessian"];
+				document.querySelector('#nome-elemento').textContent = ''+elementos[z];
+				document.querySelector('#numero-atomico').textContent = 'Número Atômico: '+ (z+1);
+				document.querySelector('#massa').textContent = 'Massa Atômica: '+ massa[z];
+				document.querySelector('#simbolo').textContent = 'Símbolo: '+ simbolos[z];
+				document.querySelector('#quem-descobriu').textContent = 'Descoberto por: '+ pessoa[z];
+				document.querySelector('#ano-descoberto').textContent = 'Descoberto em: '+ ano[z];
+				document.querySelector('#familia').textContent = 'Família: '+ familia[z];
+				document.querySelector('#classificacao').textContent = 'Classificação: '+ classificacao[z];
+				var modal = document.getElementById("myModal");
+				var btn = document.getElementById("myBtn");
+				var span = document.getElementsByClassName("close")[0];
+				modal.style.display = "block";
+				span.onclick = function() {
+			 		modal.style.display = "none";
+				}
+				window.onclick = function(event) {
+			  	if (event.target == modal) {
+					modal.style.display = "none";
+			  	}
+				
+			}
+			}
+		</script>
+	</body>
+</html>
