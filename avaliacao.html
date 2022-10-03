@@ -91,6 +91,7 @@
           <button class="star">&#9734;</button>
           <button class="star">&#9734;</button>
         </div>
+        <button class="enviar" onclick="Enviar()">Enviar</button>
         <h5 class="contador">0 de 5</h5>
 
       </div>
@@ -100,10 +101,11 @@
       
       
       <script>
+        var current_star_level;
         const allstars = document.querySelectorAll('.star');
         allstars.forEach((star,i) =>{
           star.onclick = function(){
-            let current_star_level = i + 1;
+            current_star_level = i + 1;
             document.querySelector('.contador').textContent = current_star_level + ' de 5';
             allstars.forEach((star,j) => {
               if(current_star_level >= j+1){
@@ -114,8 +116,13 @@
               })
                
             }
+            function Enviar() {  
+                console.log(current_star_level)
+            }
           })
-
+        function Enviar() {  
+            console.log(current_star_level)
+        }
       </script>
     </body>
   </html>
