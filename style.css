@@ -21,7 +21,7 @@ button{
 .tabela{
   display: grid;
   grid-template-columns: repeat(18, 88px);
-  grid-template-rows: repeat(11, 88px);
+  grid-template-rows: repeat(9, 88px);
   grid-gap: 6px;
   margin: auto;
   justify-content: center;
@@ -45,11 +45,21 @@ button{
   font: 500 12px "Poppins";
   margin-top: -0.2em;
 }
+.elemento .texto2{
+  font: 600 17.5px "Poppins";
+  margin-top: -0.2em;
+  margin-left: -0.15em;
+}
+.elemento .texto3{
+  font: 600 14.75px "Poppins";
+  margin-top: -0.2em;
+  margin-left: -0.23em;
+}
 .elemento:hover{
   transform: scale(1.12);
 
 }
-.elemento:hover .titulo, .elemento:hover .texto, .elemento:hover button{
+.elemento:hover .titulo, .elemento:hover .texto, .elemento:hover .texto2,.elemento:hover .texto3, .elemento:hover button{
   -webkit-text-fill-color: #222;
   background: transparent;
 }
@@ -114,7 +124,7 @@ button{
 .sete{
   background: linear-gradient(to bottom right, #5153f3 0%, #787af3 100%);
 }
-.sete .titulo, .sete .texto{
+.sete .titulo, .sete .texto, .sete .texto3{
   background: -webkit-linear-gradient(#5153f3, #787af3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -123,7 +133,7 @@ button{
 .oito{
   background: linear-gradient(to bottom right, #63796b 0%, #83a790 100%);
 }
-.oito .titulo, .oito .texto{
+.oito .titulo, .oito .texto, .oito .texto2{
   background: -webkit-linear-gradient(#63796b, #83a790);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
