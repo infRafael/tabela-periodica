@@ -29,6 +29,7 @@
               border-radius: 15px;
               margin-left: 40%;
               width: 20%;
+              align-content: center;
             }
             
             .star-rating{
@@ -59,6 +60,16 @@
             h1,h2,h5{
               text-align: center;
               color: #000;
+            }
+            .enviar{
+              display: block;
+              max-width: 300px;
+              margin: auto;
+              background: none;
+              border: none; 
+              font-size: 27px;
+              margin-top: -20px;
+              margin-bottom: 20px;
             }
         </style>
 
@@ -101,27 +112,32 @@
       
       
       <script>
-        var current_star_level;
+        var current_star_level = 0;
+        var envios = 0;
         const allstars = document.querySelectorAll('.star');
         allstars.forEach((star,i) =>{
           star.onclick = function(){
-            current_star_level = i + 1;
-            document.querySelector('.contador').textContent = current_star_level + ' de 5';
-            allstars.forEach((star,j) => {
-              if(current_star_level >= j+1){
-                star.innerHTML = '&#9733';
-              }else{
-                star.innerHTML = '&#9734';
-              }
-              })
-               
+            if(envios == 0){
+              current_star_level = i + 1;
+              document.querySelector('.contador').textContent = current_star_level + ' de 5';
+              allstars.forEach((star,j) => {
+                if(current_star_level >= j+1){
+                  star.innerHTML = '&#9733';
+                }else{
+                  star.innerHTML = '&#9734';
+                }
+                })
             }
-            function Enviar() {  
-                console.log(current_star_level)
             }
+            
+            
           })
-        function Enviar() {  
-            console.log(current_star_level)
+        function Enviar() {
+            if(envios == 0 && current_star_level != 0){
+              console.log(current_star_level);
+              document.querySelector('.enviar').textContent = 'Obrigado pela avaliação';
+              envios = 1;
+            }  
         }
       </script>
     </body>
