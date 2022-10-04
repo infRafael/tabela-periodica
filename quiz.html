@@ -89,7 +89,7 @@
 		     document.querySelector('.pergunta').textContent = perguntas[tipo] + simbolos[elemento_sorteado];
 		     for(var x = 0; x < 4; x++){
 			   errado =   Math.floor(Math.random() * 118);
-			    while (errado == botao_certo){
+			    while (errado == elemento_sorteado){
 				errado =   Math.floor(Math.random() * 118);
 			    }
 			     document.querySelector(botoes[x]).textContent = elementos[errado];
@@ -99,7 +99,7 @@
 		      document.querySelector('.pergunta').textContent =  perguntas[tipo] + elementos[elemento_sorteado];     
 		}
 	    
-	    	document.querySelector(botoes[botao_certo]).textContent = "certo";
+	    	document.querySelector(botoes[botao_certo]).textContent = elementos[elemento_sorteado];
 	  
 	    }
             function Enviar(x) {
