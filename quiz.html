@@ -91,12 +91,23 @@
 		    document.querySelector('.pergunta').textContent = opcao_pergunta[pergunta] + elementos[elemento_sorteado];
 		    
 		    if(pergunta == 3){
-			for(var x = 0; x < 8; x++){
-				if (classes[x] == classificacao[elemento_sorteado])
+			for(n1 = 0; n1 < 8; n1++){
+				if (classes[n1] == classificacao[elemento_sorteado])
 					break;
 			}
-			    console.log(x);
-			    
+			do{
+			   n2 =  Math.floor(Math.random() * 9);
+			}while(n2 == n1);
+			do{
+			   n3 =  Math.floor(Math.random() * 9);
+			}while(n3 == n1 || n3 == n2);
+			do{
+			   n4 =  Math.floor(Math.random() * 9);
+			}while(n4 == n1 || n4 == n2 || n4 == n3);
+			console.log(n1)
+			 console.log(n2)
+			    console.log(n3)
+			    console.log(n4)
 		    }
 	    }
 			  
