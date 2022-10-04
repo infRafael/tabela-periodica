@@ -137,13 +137,13 @@
 			     	if(classes[y]==classificacao[elemento_sorteado])
 				     certo_elemento = y;
 		     }
-		     classes.pop(certo_elemento); 
+		     classes.remove(classes[certo_elemento]); 
 		     console.log(classes);
 		     var z = 8;
 		     for(var x = 0; x < 4; x++){		   
 			     errado = Math.floor(Math.random() * z);
 			     document.querySelector(botoes[x]).textContent = classes[errado];
-			     classes.pop(errado);
+			     classes.remove(classes[errado]); 
 			     console.log(classes);
 			     z--;
 		     }		
