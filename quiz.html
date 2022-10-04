@@ -87,8 +87,9 @@
 	    NovaPergunta();
 	    function NovaPergunta(){
 		    pergunta =  3;
-		    document.querySelector('.pergunta').textContent = opcao_pergunta[pergunta];
 		    elemento_sorteado =  Math.floor(Math.random() * 118);
+		    document.querySelector('.pergunta').textContent = opcao_pergunta[pergunta] + elementos[elemento_sorteado];
+		    
 		    if(pergunta == 3){
 			for(var x = 0; x < 8; x++){
 				if (classes[x] == classificacao[elemento_sorteado])
