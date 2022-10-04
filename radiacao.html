@@ -17,16 +17,29 @@
             }
             .elemento{
                 margin-bottom: 45px;
-                font-size: 700 500px solid;
-		display: flex;
-		justify-content: center;
-		color: #e8e8e8;
+                font-size: 100px;
+                display: flex;
+                justify-content: center;
+                color: #e8e8e8;
             }
             .num_atom, .massa{
                 font-size: 500 25px solid;
-		color: #e8e8e8;
-		display: flex;
-		justify-content: center;
+                color: #e8e8e8;
+                display: flex;
+                justify-content: center;
+            }
+            .seucu{
+              background-color: #e8e8e8; 
+              border-radius: 20px;
+              color: #1f031a;
+              margin-top:10%;
+              margin-left: 30%;
+              padding: 50px;
+              width: 40%; 
+              text-align: center;
+            }
+            .enviar{
+              margin-top: 40px;
             }
         </style>
     </head>
@@ -50,37 +63,43 @@
 			  </ul>
 			</div>
 		  </nav>
+          <div class="seucu">
+            <h3 class="nome"></h3>
+            <h1 class="elemento"></h1>
+            <h2 class="num_atom"></h2>
+            <h2 class="massa"></h2>
 	  
-          <h1 class="elemento"></h1>
-          <h2 class="num_atom"></h2>
-          <h2 class="massa"></h2>
-	  
-          <button class="enviar" onclick="Enviar(-2,-4)">+ Alfa</button>
-          <button class="enviar" onclick="Enviar(2,4)">- Alfa</button>
-          <button class="enviar" onclick="Enviar(1,0)">+ Beta</button>
-          <button class="enviar" onclick="Enviar(-1,0)">- Beta</button>
+            <button class="enviar" onclick="Enviar(-2,-4)">Liberar Alfa</button>
+            <button class="enviar" onclick="Enviar(2,4)">Voltar Alfa</button>
+            <button class="enviar" onclick="Enviar(1,0)">Liberar Beta</button>
+            <button class="enviar" onclick="Enviar(-1,0)">Voltar Beta</button>
+          </div>
+          
 
           
 
           <script>
             var numero_atomico = 92;
             var massa =  238;
+            nomes = ["Chumbo","Bismuto","Polônio","Astato","Randônio","Frâncio","Rádio","Actínio","Tório","Protactínio","Urânio","Netúnio","Plutônio","Amerício","Cúrio","Berquélio","Califórnio","Einstênio","Férmio","Mendelévio","Nobélio","Laurêncio",
+				    "Rutherfórdio","Dúbnio","Seaborgio","Bóhrio","Hássio","Meitnério","Darmstádtio","Roentgênio","Copernício","Nihônio","Fleróvio","Moscóvio","Livermório","Tenessino","Oganessônio"];
             elementos = ["Pb","Bi","Po","At","Rn","Fr","Ra","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr","Rf","Db","Sg","Bh","Hs","Mt","Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"];
+            document.querySelector('.nome').textContent = nomes[numero_atomico-82];
             document.querySelector('.elemento').textContent = elementos[numero_atomico-82];
-            document.querySelector('.num_atom').textContent = numero_atomico;
-            document.querySelector('.massa').textContent = massa;
+            document.querySelector('.num_atom').textContent = 'Número atómico: ' + numero_atomico;
+            document.querySelector('.massa').textContent = 'Massa atômica: ' + massa;
             function Enviar(z,a) {
                 if(numero_atomico >= 84 || z > 0){
                     if(numero_atomico + z <= 118){
                         numero_atomico = numero_atomico + z;
-			 massa = massa + a;
-		    }
+			                  massa = massa + a;
+		                }
 		   
                 }
-                
+                document.querySelector('.nome').textContent = nomes[numero_atomico-82];
                 document.querySelector('.elemento').textContent = elementos[numero_atomico-82];
-                document.querySelector('.num_atom').textContent = numero_atomico;
-                document.querySelector('.massa').textContent = massa;
+                document.querySelector('.num_atom').textContent = 'Numero Atomico: ' + numero_atomico;
+                document.querySelector('.massa').textContent = 'Massa Atomica: ' + massa;
             }
 
 
