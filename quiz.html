@@ -78,12 +78,12 @@
 	    
 	    if(tipo == 0){
 		 document.querySelector('.pergunta').textContent = perguntas[tipo] + simbolos[tipo];
-		 var botao = Math.floor(Math.random() * 4);
-		 document.querySelector(botao).textContent = "certo";
+
 	    }else{
 		 document.querySelector('.pergunta').textContent =  perguntas[tipo] + elementos[tipo];     
 	    }
-	       
+	    var botao = Math.floor(Math.random() * 4);
+	    document.querySelector(botoes).textContent = "certo";
 	  
 	   
             function Enviar(x) {
