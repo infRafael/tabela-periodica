@@ -88,6 +88,7 @@
 				"Halogênio","Gás nobre","Metal alcalino","Metal alcalino-terroso","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo",
 				"Actinídeo","Actinídeo","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Outro metal",
 				"Outro metal","Outro metal","Outro metal","Halogênio","Gás nobre"];
+	    var classes = ["Não metal","Gás nobre","Metal alcalino","Metal alcalino-terroso","Semimetal","Halogênio","Metal de transição","Actinídeo","Lantanídeo"];
 	    var tipo, botao_certo, elemento_sorteado, errado, total;
 	    var certo = 0;
 		
@@ -130,13 +131,14 @@
 		     }	     
 		     document.querySelector(botoes[botao_certo]).textContent = '' + (elemento_sorteado+1);
 		}else if(tipo == 3){
+		     vetor = [classificao[elemento_sorteado]];
 		     document.querySelector('.pergunta').textContent = perguntas[tipo] + elementos[elemento_sorteado];
 		     for(var x = 0; x < 4; x++){
-			   errado =   Math.floor(Math.random() * 118);
-			   console.log(classificacao[errado])
-			   console.log(classificacao[elemento_sorteado])
-			   while (classificacao[errado] == classificacao[elemento_sorteado]){
-				errado = Math.floor(Math.random() * 118);
+			   errado =   Math.floor(Math.random() * 9);
+			   while (classificacao[errado] not in vetor){
+				vetor.push(classificacao[errado]);
+				errado = Math.floor(Math.random() * 9);
+				console.log(vetor);
 				  
 			   }
 			     document.querySelector(botoes[x]).textContent = classificacao[errado];
