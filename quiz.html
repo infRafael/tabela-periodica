@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    <head>
+       	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>Sobre</title>
+        <meta charset="UTF-8">	
+        <style>
+            .navbar{
+                 background-color:  rgba(75, 75, 75, 0.1);
+                  padding: 20px;
+                  margin-bottom: 50px;
+                  color: #e8e8e8;
+            }
+            body{
+                background: #1f031a;
+                font-family: "Poppins", sans-serif;
+            }
+            .elemento{
+                margin-bottom: 45px;
+                font-size: 700 500px solid;
+		display: flex;
+		justify-content: center;
+		color: #e8e8e8;
+            }
+            .num_atom, .massa{
+                font-size: 500 25px solid;
+		color: #e8e8e8;
+		display: flex;
+		justify-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg">
+			<a class="navbar-brand text-white" href="index.html">Tabela Periódica</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+			  <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="radiacao.html">Decaimentos Radiotivos</a>
+                </li>
+				<li class="nav-item">
+				  <a class="nav-link text-white" href="avaliacao.html">Avaliação</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link text-white" href="sobre.html">Sobre</a>
+				</li>
+			  </ul>
+			</div>
+		  </nav>
+	  
+          <h1 class="pergunta"></h1>
+          
+	  
+          <button class="botao1" onclick="Enviar(1)">+ Alfa</button>
+          <button class="botao2" onclick="Enviar(2)">- Alfa</button>
+          <button class="botao3" onclick="Enviar(3)">+ Beta</button>
+          <button class="botao4" onclick="Enviar(4)">- Beta</button>
+
+    
+          <script>
+            function Enviar(x) {
+               document.querySelector('.pergunta').textContent = x;
+              
+            }
+          </script>
+    </body>
+  </html>
