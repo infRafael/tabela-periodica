@@ -65,12 +65,10 @@
             document.querySelector('.massa').textContent = massa;
             function Enviar(z,a) {
                 if(numero_atomico >= 84 || z > 0){
-                    if(numero_atomico + z > 118){
-                        numero_atomico = 118;
-                    }else{
+                    if(numero_atomico + z <= 118){
                         numero_atomico = numero_atomico + z;
 			 massa = massa + a;
-                    }
+                    
 		   
                 }
                 
