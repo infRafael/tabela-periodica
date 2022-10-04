@@ -61,9 +61,9 @@
 
     
           <script>
-	    
-	    
-	    document.querySelector('.pergunta').textContent = "aaa";     
+	    var perguntas = ["Qual elemento desse simbolo", "Qual o simbolo desse elemento", "Qual o numero atomico desse elemento", "Qual a classificacao desse elemento"];
+	    var tipo = Math.floor(Math.random() * 3);
+	    document.querySelector('.pergunta').textContent = perguntas[];     
 	  
 	   
             function Enviar(x) {
