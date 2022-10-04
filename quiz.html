@@ -65,7 +65,8 @@
     
           <script>
 	    var opcao_pergunta = ["Qual é o elemento representado pelo simbolo ", "Qual simbolo representa o elemento ", "Qual o numero atômico do elemento ", "Qual a classificação do elemento "];
-	    var pergunta, n1, n2, n3, n4, elemento_sorteado;
+	    var pergunta, elemento_sorteado;
+	    var nums = [0,0,0,0];
 	    var elementos = ["Hidrogênio","Hélio","Lítio","Berílio","Boro","Carbono","Nitrogênio","Oxigênio", "Flúor", "Neônio","Sódio","Magnésio","Alumínio","Silício","Fósforo",
 	    "Enxofre","Cloro","Argônio","Potássio","Cálcio","Escândio","Titânio","Vanádio","Crômio","Manganês","Ferro","Cobalto","Níquel","Cobre","Zinco","Gálio","Germânio","Arsênio",
 	    "Selênio","Bromo","Criptônio","Rubídio","Estrôncio","Ítrio","Zircônico","Nióbio","Molibdênio","Tecnécio","Rutênio","Ródio","Paládio","Prata","Cádmio","Índio","Estanho","Antimônio",
@@ -88,26 +89,32 @@
 	    function NovaPergunta(){
 		    pergunta =  3;
 		    elemento_sorteado =  Math.floor(Math.random() * 118);
+		    botao_certo =  Math.floor(Math.random() * 4);
 		    document.querySelector('.pergunta').textContent = opcao_pergunta[pergunta] + elementos[elemento_sorteado];
-		    
+		    var botoes = [".botao1",".botao2",".botao3",".botao4"];
 		    if(pergunta == 3){
-			for(n1 = 0; n1 < 8; n1++){
+			for(nums[0] = 0; nums[0] < 8; nums[0]++){
 				if (classes[n1] == classificacao[elemento_sorteado])
 					break;
 			}
+			
 			do{
-			   n2 =  Math.floor(Math.random() * 9);
-			}while(n2 == n1);
+			   nums[1] =  Math.floor(Math.random() * 9);
+			}while(nums[1] == nums[0]);
 			do{
-			   n3 =  Math.floor(Math.random() * 9);
-			}while(n3 == n1 || n3 == n2);
+			   nums[2] =  Math.floor(Math.random() * 9);
+			}while(nums[2] == nums[1] || nums[2] == nums[0]);
 			do{
-			   n4 =  Math.floor(Math.random() * 9);
-			}while(n4 == n1 || n4 == n2 || n4 == n3);
-			console.log(n1)
-			 console.log(n2)
-			    console.log(n3)
-			    console.log(n4)
+			   nums[3] =  Math.floor(Math.random() * 9);
+			}while(nums[3] == nums[2] || nums[3] == nums[1] || nums[3] == nums[0]);
+			do{
+			   nums[4] =  Math.floor(Math.random() * 9);
+			}while(nums[4] == nums[3] || nums[4] == nums[2] || nums[4] == nums[1] || nums[4] == nums[0]);
+		
+			for(var x = 0; x < 4; x++){
+			    	document.querySelector(botoes[x]).textContent = classes[nums[x-1]];
+			}
+			document.querySelector(botoes[botao_certo]).textContent = classificacao[elemento_sorteado];
 		    }
 	    }
 			  
