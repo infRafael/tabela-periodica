@@ -61,9 +61,26 @@
 
     
           <script>
-	    var tipo_pergunta = ["Qual elemento é representado por ","Qual o simbolo do elemento ","Qual o numero atomico do elemento "];
+	    var tipo_pergunta = ["Qual elemento é representado por ","Qual o simbolo do elemento ","Qual o numero atomico do elemento ","Qual a classificação do elemento];
 	    var pergunta = Math.floor(Math.random() * 3);
-	    document.querySelector('.pergunta').textContent = tipo_pergunta[pergunta];  
+	    var elementos = ["Hidrogênio","Hélio","Lítio","Berílio","Boro","Carbono","Nitrogênio","Oxigênio", "Flúor", "Neônio","Sódio","Magnésio","Alumínio","Silício","Fósforo",
+				"Enxofre","Cloro","Argônio","Potássio","Cálcio","Escândio","Titânio","Vanádio","Crômio","Manganês","Ferro","Cobalto","Níquel","Cobre","Zinco","Gálio","Germânio","Arsênio",
+				"Selênio","Bromo","Criptônio","Rubídio","Estrôncio","Ítrio","Zircônico","Nióbio","Molibdênio","Tecnécio","Rutênio","Ródio","Paládio","Prata","Cádmio","Índio","Estanho","Antimônio",
+				"Telúrio","Iodo","Xenônio","Césio","Bário","Lantânio","Cério","Praseodimio","Neodímio","Promécio","Samário","Európio","Gadolínio","Térbio","Disprósio","Hólmio","Érbio","Túlio","Itérbio",
+				"Lutécio","Háfnio","Tântalo","Tungstênio","Rênio","Ósmio","Irídio","Platina","Ouro","Mercurio","Tálio","Chumbo","Bismuto","Polônio","Astato","Randônio","Frâncio","Rádio",
+				"Actínio","Tório","Protactínio","Urânio","Netúnio","Plutônio","Amerício","Cúrio","Berquélio","Califórnio","Einstênio","Férmio","Mendelévio","Nobélio","Laurêncio",
+				"Rutherfórdio","Dúbnio","Seaborgio","Bóhrio","Hássio","Meitnério","Darmstádtio","Roentgênio","Copernício","Nihônio","Fleróvio","Moscóvio","Livermório","Tenessino","Oganessônio"];
+	    var simbolos = ["H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl","Ar","K","Ca","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Ga","Ge","As","Se","Br",
+	    "Kr","Rb","Sr","Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd","In","Sn","Sb","Te","I","Xe","Cs","Ba","La","Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu","Hf",
+	    "Ta","W","Re","Os","Ir","Pt","Au","Hg","Tl","Pb","Bi","Po","At","Rn","Fr","Ra","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr","Rf","Db","Sg","Bh","Hs","Mt",
+	    "Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"];
+	    var elemento_sorteado = Math.floor(Math.random() * 118);
+	    if(elemento_sorteado == 0){
+		document.querySelector('.pergunta').textContent = tipo_pergunta[pergunta] + simbolo[elemento_sorteado] ;  
+	    }else{
+		 document.querySelector('.pergunta').textContent = tipo_pergunta[pergunta] + elemento[elemento_sorteado] ;     
+	    }
+	   
             function Enviar(x) {
 		console.log(x);
               
