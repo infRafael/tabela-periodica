@@ -15,22 +15,36 @@
                 background: #1f031a;
                 font-family: "Poppins", sans-serif;
             }
-            .elemento{
-                margin-bottom: 45px;
-                font-size: 700 500px solid;
-		display: flex;
-		justify-content: center;
-		color: #e8e8e8;
+            .organizacao{
+              background-color: #e8e8e8; 
+              border-radius: 20px;
+              color: #1f031a;
+              margin-top:10%;
+              margin-left: 20%;
+              padding: 50px;
+              width: 60%; 
+              text-align: center;
             }
-            .num_atom, .massa{
-                font-size: 500 25px solid;
-		color: #e8e8e8;
-		display: flex;
-		justify-content: center;
+            .pergunta{
+                font-size: 50px;
+                margin-bottom: 10%;
             }
-	    .pergunta{
-		color: #e8e8e8;	    
-	   }
+            .botoes{
+                background-color: #1f031a; 
+                border: none;
+                border-radius: 10px;
+                color: #e8e8e8;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 30px;
+            }
+            .placar{
+                margin-bottom: 10px;
+                text-align: end;
+                font-size: 24px;
+            }
         </style>
     </head>
     <body>
@@ -44,6 +58,9 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="radiacao.html">Decaimentos Radiotivos</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="quiz.html">Quiz</a>
+                </li>
 				<li class="nav-item">
 				  <a class="nav-link text-white" href="avaliacao.html">Avaliação</a>
 				</li>
@@ -53,16 +70,17 @@
 			  </ul>
 			</div>
 		  </nav>
-	  
-          <h1 class="pergunta"></h1>
+          <div class="organizacao">
+            <h2 class="placar">0/0</h2>
+            <h1 class="pergunta"></h1>
+            <button class="botoes botao1" onclick="Enviar(0)"></button>
+            <button class="botoes botao2" onclick="Enviar(1)"></button>
+            <button class="botoes botao3" onclick="Enviar(2)"></button>
+            <button class="botoes botao4" onclick="Enviar(3)"></button>
+          </div>
           
-	  
-          <button class="botao1" onclick="Enviar(0)"></button>
-          <button class="botao2" onclick="Enviar(1)"></button>
-          <button class="botao3" onclick="Enviar(2)"></button>
-          <button class="botao4" onclick="Enviar(3)"></button>
 
-          <h2 class="placar"></h2>
+          
           <script>
 	    var opcao_pergunta = ["Qual é o elemento representado pelo simbolo ", "Qual simbolo representa o elemento ", "Qual o numero atômico do elemento ", "Qual a classificação do elemento "];
 	    var pergunta, elemento_sorteado, botao_certo, acerto = 0, total = 0;
