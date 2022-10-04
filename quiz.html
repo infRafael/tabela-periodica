@@ -84,8 +84,9 @@
 	    "Actinídeo","Actinídeo","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Outro metal",
 	    "Outro metal","Outro metal","Outro metal","Halogênio","Gás nobre"];
 	    var classes = ["Não metal","Gás nobre","Metal alcalino","Metal alcalino-terroso","Semimetal","Halogênio","Metal de transição","Actinídeo","Lantanídeo"];
+	    NovaPergunta();
 	    function NovaPergunta(){
-		    pergunta =  4;
+		    pergunta =  3;
 		    document.querySelector('.pergunta').textContent = opcao_pergunta[pergunta];
 		    elemento_sorteado =  Math.floor(Math.random() * 118);
 		    if(pergunta == 3){
