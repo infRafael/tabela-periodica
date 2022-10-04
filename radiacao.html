@@ -70,8 +70,9 @@
                     }else{
                         numero_atomico = numero_atomico + z;
                     }
+		    massa = massa + a;
                 }
-                massa = massa + a;
+                
                 document.querySelector('.elemento').textContent = elementos[numero_atomico-82];
                 document.querySelector('.num_atom').textContent = numero_atomico;
                 document.querySelector('.massa').textContent = massa;
