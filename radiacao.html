@@ -53,8 +53,6 @@
 		  </nav>
 	  <div class ="elementos"> 
           	<h1 class="elemento"></h1>
-          	<h2 class="num_atom"></h2>
-          	<h2 class="massa"></h2>
 	  </div>
           <button class="enviar" onclick="Enviar(-2,-4)">+ Alfa</button>
           <button class="enviar" onclick="Enviar(2,4)">- Alfa</button>
@@ -79,9 +77,7 @@
 		   
                 }
                 
-                document.querySelector('.elemento').textContent = elementos[numero_atomico-82];
-                document.querySelector('.num_atom').textContent = numero_atomico;
-                document.querySelector('.massa').textContent = massa;
+                document.querySelector('.elemento').textContent = numero_atomico + '' + elementos[numero_atomico-82] + '' + massa;     
             }
 
 
