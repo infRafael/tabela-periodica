@@ -133,8 +133,11 @@
 		     document.querySelector('.pergunta').textContent = perguntas[tipo] + elementos[elemento_sorteado];
 		     for(var x = 0; x < 4; x++){
 			   errado =   Math.floor(Math.random() * 118);
+			   console.log(classificacao[errado])
+			   console.log(classificacao[elemento_sorteado])
 			   while (classificacao[errado] == classificacao[elemento_sorteado]){
 				errado = Math.floor(Math.random() * 118);
+				  
 			   }
 			     document.querySelector(botoes[x]).textContent = classificacao[errado];
 		     }		
