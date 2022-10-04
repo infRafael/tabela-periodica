@@ -62,7 +62,8 @@
     
           <script>
             function Enviar(x) {
-               document.querySelector('.pergunta').textContent = x;
+		var perguntas = ["A","B","C","D"];
+		document.querySelector('.pergunta').textContent = perguntas(Math.floor(Math.random() * 4);
               
             }
           </script>
