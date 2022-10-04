@@ -61,7 +61,7 @@
 
     
           <script>
-	    var perguntas = ["Qual elemento desse simbolo", "Qual o simbolo desse elemento", "Qual o numero atomico desse elemento", "Qual a classificacao desse elemento"];
+	    var perguntas = ["Qual elemento desse simbolo ", "Qual o simbolo desse elemento ", "Qual o numero atomico desse elemento ", "Qual a classificacao desse elemento "];
 	    var tipo = Math.floor(Math.random() * 4);
 	    var elementos = ["Hidrogênio","Hélio","Lítio","Berílio","Boro","Carbono","Nitrogênio","Oxigênio", "Flúor", "Neônio","Sódio","Magnésio","Alumínio","Silício","Fósforo",
 				"Enxofre","Cloro","Argônio","Potássio","Cálcio","Escândio","Titânio","Vanádio","Crômio","Manganês","Ferro","Cobalto","Níquel","Cobre","Zinco","Gálio","Germânio","Arsênio",
@@ -75,9 +75,9 @@
 				"Ta","W","Re","Os","Ir","Pt","Au","Hg","Tl","Pb","Bi","Po","At","Rn","Fr","Ra","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr","Rf","Db","Sg","Bh","Hs","Mt",
 				"Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"]; 
 	    if(tipo == 0){
-		 document.querySelector('.pergunta').textContent =  simbolos[tipo];     
+		 document.querySelector('.pergunta').textContent = perguntas[tipo] + simbolos[tipo];     
 	    }else{
-		 document.querySelector('.pergunta').textContent =  elementos[tipo];     
+		 document.querySelector('.pergunta').textContent =  perguntas[tipo] + elementos[tipo];     
 	    }
 	       
 	  
