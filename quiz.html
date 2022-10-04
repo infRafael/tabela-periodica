@@ -80,7 +80,7 @@
            Novapergunta();
 		 
 	    function Novapergunta(){
-		tipo = 0;
+		tipo = Math.floor(Math.random() * 3);;
 		elemento_sorteado = Math.floor(Math.random() * 118);
 	  	botao_certo = Math.floor(Math.random() * 4);
 	    
@@ -94,12 +94,30 @@
 			    }
 			     document.querySelector(botoes[x]).textContent = elementos[errado];
 		     }	     
-		     
-	        }else{
-		      document.querySelector('.pergunta').textContent =  perguntas[tipo] + elementos[elemento_sorteado];     
+		     document.querySelector(botoes[botao_certo]).textContent = elementos[elemento_sorteado];
+	        }else if(tipo == 1){
+		      document.querySelector('.pergunta').textContent = perguntas[tipo] + elementos[elemento_sorteado];
+		     for(var x = 0; x < 4; x++){
+			   errado =   Math.floor(Math.random() * 118);
+			    while (errado == elemento_sorteado){
+				errado =   Math.floor(Math.random() * 118);
+			    }
+			     document.querySelector(botoes[x]).textContent = simbolos[errado];
+		     }	     
+		     document.querySelector(botoes[botao_certo]).textContent = simbolos[elemento_sorteado];
+		}else if(tipo == 2){
+		     document.querySelector('.pergunta').textContent = perguntas[tipo] + elementos[elemento_sorteado];
+		     for(var x = 0; x < 4; x++){
+			   errado =   Math.floor(Math.random() * 118);
+			    while (errado == elemento_sorteado){
+				errado = Math.floor(Math.random() * 118);
+			    }
+			     document.querySelector(botoes[x]).textContent = '' + errado;
+		     }	     
+		     document.querySelector(botoes[botao_certo]).textContent = '' + elemento_sorteado;
 		}
 	    
-	    	document.querySelector(botoes[botao_certo]).textContent = elementos[elemento_sorteado];
+	    	
 	  
 	    }
             function Enviar(x) {
