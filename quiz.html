@@ -54,15 +54,16 @@
           <h1 class="pergunta"></h1>
           
 	  
-          <button class="botao1" onclick="Enviar(1)">+ Alfa</button>
-          <button class="botao2" onclick="Enviar(2)">- Alfa</button>
-          <button class="botao3" onclick="Enviar(3)">+ Beta</button>
-          <button class="botao4" onclick="Enviar(4)">- Beta</button>
+          <button class="botao1" onclick="Enviar(0)">+ Alfa</button>
+          <button class="botao2" onclick="Enviar(1)">- Alfa</button>
+          <button class="botao3" onclick="Enviar(2)">+ Beta</button>
+          <button class="botao4" onclick="Enviar(3)">- Beta</button>
 
     
           <script>
 	    var perguntas = ["Qual é o elemento representado pelo simbolo ", "Qual simbolo representa o elemento ", "Qual o numero atômico do elemento ", "Qual a classificação do elemento "];
 	    var tipo = Math.floor(Math.random() * 4);
+	    var certo;
 	    var botoes = [".botao1",".botao2",".botao3",".botao4"];
 	    var elementos = ["Hidrogênio","Hélio","Lítio","Berílio","Boro","Carbono","Nitrogênio","Oxigênio", "Flúor", "Neônio","Sódio","Magnésio","Alumínio","Silício","Fósforo",
 				"Enxofre","Cloro","Argônio","Potássio","Cálcio","Escândio","Titânio","Vanádio","Crômio","Manganês","Ferro","Cobalto","Níquel","Cobre","Zinco","Gálio","Germânio","Arsênio",
@@ -87,8 +88,10 @@
 	  
 	   
             function Enviar(x) {
-		console.log(x);
-              
+		if(botao == x){
+			certo = certo + 1;
+			console.log(certo);
+		}		
             }
           </script>
     </body>
