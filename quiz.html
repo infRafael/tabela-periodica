@@ -131,20 +131,21 @@
 		     }	     
 		     document.querySelector(botoes[botao_certo]).textContent = '' + (elemento_sorteado+1);
 		}else if(tipo == 3){
-		     vetor = [classificacao[elemento_sorteado]];
+		     
 		     document.querySelector('.pergunta').textContent = perguntas[tipo] + elementos[elemento_sorteado];
-		     for(var x = 0; x < 4; x++){
-			   errado =   Math.floor(Math.random() * 9);
-			   console.log(classes[errado])
-			   console.log(vetor)
-			   console.log(classes[errado] in vetor)
-			   while (classes[errado] in vetor){
-				errado = Math.floor(Math.random() * 9);
-			   }
-			   vetor.push(classes[errado]);
-			   document.querySelector(botoes[x]).textContent = classes[errado];
+		     for(var y=0;y<8;y++){
+			     	if(classes[y]==classificacao[elemento_sorteado])
+				     break;
+		     }
+		     vetor=[0,1,2,3,4,5,6,7,8];
+			     vetor.pop(y);   
+		     var z = 8;
+		     for(var x = 0; x < 4; x++){		   
+			     errado = Math.floor(Math.random() * z);
+			     document.querySelector(botoes[x]).textContent = classes[errado];
+			     z--;
 		     }		
-		
+		     document.querySelector(botoes[botao_certo]).textContent = classificacao[elemento_sorteado];
 		}
 	    
 	    	
