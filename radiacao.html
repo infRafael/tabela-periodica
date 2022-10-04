@@ -66,8 +66,6 @@
             var massa =  238;
             elementos = ["Pb","Bi","Po","At","Rn","Fr","Ra","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr","Rf","Db","Sg","Bh","Hs","Mt","Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"];
             document.querySelector('.elemento').textContent = elementos[numero_atomico-82];
-            document.querySelector('.num_atom').textContent = numero_atomico;
-            document.querySelector('.massa').textContent = massa;
             function Enviar(z,a) {
                 if(numero_atomico >= 84 || z > 0){
                     if(numero_atomico + z <= 118){
@@ -77,9 +75,8 @@
 		   
                 }
                 
-                document.querySelector('.elemento').textContent = elementos[numero_atomico-82];
-            	document.querySelector('.num_atom').textContent = numero_atomico;
-           	document.querySelector('.massa').textContent = massa;
+                document.querySelector('.elemento').textContent = numero_atomico.toString() + elementos[numero_atomico-82] + massa.toString();
+            	
             }
 
 
