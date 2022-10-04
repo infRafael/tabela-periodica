@@ -135,13 +135,12 @@
 		     document.querySelector('.pergunta').textContent = perguntas[tipo] + elementos[elemento_sorteado];
 		     for(var x = 0; x < 4; x++){
 			   errado =   Math.floor(Math.random() * 9);
-			   while (classificacao[errado] not in vetor){
-				vetor.push(classificacao[errado]);
+			   while (classes[errado] in vetor){
 				errado = Math.floor(Math.random() * 9);
-				console.log(vetor);
-				  
 			   }
-			     document.querySelector(botoes[x]).textContent = classificacao[errado];
+			   vetor.push(classes[errado]);
+			   console.log(vetor);  
+			   document.querySelector(botoes[x]).textContent = classes[errado];
 		     }		
 		
 		}
