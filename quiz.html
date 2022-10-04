@@ -138,12 +138,13 @@
 				     break;
 		     }
 		     console.log(y);
-		     vetor=[0,1,2,3,4,5,6,7,8];
-			     vetor.pop(y);   
+		     
+		     classes.pop(y);   
 		     var z = 8;
 		     for(var x = 0; x < 4; x++){		   
 			     errado = Math.floor(Math.random() * z);
 			     document.querySelector(botoes[x]).textContent = classes[errado];
+			     classes.pop(errado);
 			     z--;
 		     }		
 		     document.querySelector(botoes[botao_certo]).textContent = classificacao[elemento_sorteado];
