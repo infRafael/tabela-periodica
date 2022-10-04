@@ -92,7 +92,7 @@
 		    elemento_sorteado =  Math.floor(Math.random() * 118);
 		    botao_certo =  Math.floor(Math.random() * 4);
 		    document.querySelector('.pergunta').textContent = opcao_pergunta[pergunta] + elementos[elemento_sorteado];
-
+		    document.querySelector('.botao1').textContent = "nota";
 		    if(pergunta == 3){
 			for(nums[0] = 0; nums[0] < 8; nums[0]++){
 				if (classes[n1] == classificacao[elemento_sorteado])
