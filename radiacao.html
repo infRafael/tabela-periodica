@@ -18,16 +18,15 @@
             h1{
                 margin-bottom: 45px;
                 font-size: 700 200px solid;
-		text-align: center;
             }
             h2{
                 font-size: 500 25px solid;
-		text-align: center;
-		display: inline-block;
             }
 	    .elementos{
 		justify-content: center;
+		text-align: center;   
 		color: #e8e8e8;
+		display: inline-block;
 	    }
         </style>
     </head>
@@ -53,6 +52,8 @@
 		  </nav>
 	  <div class ="elementos"> 
           	<h1 class="elemento"></h1>
+          	<h2 class="num_atom"></h2>
+          	<h2 class="massa"></h2>
 	  </div>
           <button class="enviar" onclick="Enviar(-2,-4)">+ Alfa</button>
           <button class="enviar" onclick="Enviar(2,4)">- Alfa</button>
@@ -66,6 +67,8 @@
             var massa =  238;
             elementos = ["Pb","Bi","Po","At","Rn","Fr","Ra","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr","Rf","Db","Sg","Bh","Hs","Mt","Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"];
             document.querySelector('.elemento').textContent = elementos[numero_atomico-82];
+            document.querySelector('.num_atom').textContent = numero_atomico;
+            document.querySelector('.massa').textContent = massa;
             function Enviar(z,a) {
                 if(numero_atomico >= 84 || z > 0){
                     if(numero_atomico + z <= 118){
@@ -75,8 +78,9 @@
 		   
                 }
                 
-                document.querySelector('.elemento').textContent = '' + numero_atomico;
-            	
+                document.querySelector('.elemento').textContent = elementos[numero_atomico-82];
+                document.querySelector('.num_atom').textContent = numero_atomico;
+                document.querySelector('.massa').textContent = massa;
             }
 
 
