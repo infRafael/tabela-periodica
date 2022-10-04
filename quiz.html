@@ -62,35 +62,40 @@
     
           <script>
 	    var perguntas = ["Qual é o elemento representado pelo simbolo ", "Qual simbolo representa o elemento ", "Qual o numero atômico do elemento ", "Qual a classificação do elemento "];
-	    var tipo = Math.floor(Math.random() * 4);
-	    var elemento_sorteado = Math.floor(Math.random() * 118);
-	    var certo;
 	    var botoes = [".botao1",".botao2",".botao3",".botao4"];
-	    var botao = Math.floor(Math.random() * 4);
 	    var elementos = ["Hidrogênio","Hélio","Lítio","Berílio","Boro","Carbono","Nitrogênio","Oxigênio", "Flúor", "Neônio","Sódio","Magnésio","Alumínio","Silício","Fósforo",
-				"Enxofre","Cloro","Argônio","Potássio","Cálcio","Escândio","Titânio","Vanádio","Crômio","Manganês","Ferro","Cobalto","Níquel","Cobre","Zinco","Gálio","Germânio","Arsênio",
-				"Selênio","Bromo","Criptônio","Rubídio","Estrôncio","Ítrio","Zircônico","Nióbio","Molibdênio","Tecnécio","Rutênio","Ródio","Paládio","Prata","Cádmio","Índio","Estanho","Antimônio",
-				"Telúrio","Iodo","Xenônio","Césio","Bário","Lantânio","Cério","Praseodimio","Neodímio","Promécio","Samário","Európio","Gadolínio","Térbio","Disprósio","Hólmio","Érbio","Túlio","Itérbio",
-				"Lutécio","Háfnio","Tântalo","Tungstênio","Rênio","Ósmio","Irídio","Platina","Ouro","Mercurio","Tálio","Chumbo","Bismuto","Polônio","Astato","Randônio","Frâncio","Rádio",
-				"Actínio","Tório","Protactínio","Urânio","Netúnio","Plutônio","Amerício","Cúrio","Berquélio","Califórnio","Einstênio","Férmio","Mendelévio","Nobélio","Laurêncio",
-				"Rutherfórdio","Dúbnio","Seaborgio","Bóhrio","Hássio","Meitnério","Darmstádtio","Roentgênio","Copernício","Nihônio","Fleróvio","Moscóvio","Livermório","Tenessino","Oganessônio"];
+	    "Enxofre","Cloro","Argônio","Potássio","Cálcio","Escândio","Titânio","Vanádio","Crômio","Manganês","Ferro","Cobalto","Níquel","Cobre","Zinco","Gálio","Germânio","Arsênio",
+	    "Selênio","Bromo","Criptônio","Rubídio","Estrôncio","Ítrio","Zircônico","Nióbio","Molibdênio","Tecnécio","Rutênio","Ródio","Paládio","Prata","Cádmio","Índio","Estanho","Antimônio",
+	    "Telúrio","Iodo","Xenônio","Césio","Bário","Lantânio","Cério","Praseodimio","Neodímio","Promécio","Samário","Európio","Gadolínio","Térbio","Disprósio","Hólmio","Érbio","Túlio","Itérbio",
+	    "Lutécio","Háfnio","Tântalo","Tungstênio","Rênio","Ósmio","Irídio","Platina","Ouro","Mercurio","Tálio","Chumbo","Bismuto","Polônio","Astato","Randônio","Frâncio","Rádio",
+	    "Actínio","Tório","Protactínio","Urânio","Netúnio","Plutônio","Amerício","Cúrio","Berquélio","Califórnio","Einstênio","Férmio","Mendelévio","Nobélio","Laurêncio",
+	    "Rutherfórdio","Dúbnio","Seaborgio","Bóhrio","Hássio","Meitnério","Darmstádtio","Roentgênio","Copernício","Nihônio","Fleróvio","Moscóvio","Livermório","Tenessino","Oganessônio"];
 	    var simbolos = ["H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl","Ar","K","Ca","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Ga","Ge","As","Se","Br",
-				"Kr","Rb","Sr","Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd","In","Sn","Sb","Te","I","Xe","Cs","Ba","La","Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu","Hf",
-				"Ta","W","Re","Os","Ir","Pt","Au","Hg","Tl","Pb","Bi","Po","At","Rn","Fr","Ra","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr","Rf","Db","Sg","Bh","Hs","Mt",
-				"Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"];
+	    "Kr","Rb","Sr","Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd","In","Sn","Sb","Te","I","Xe","Cs","Ba","La","Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu","Hf",
+	    "Ta","W","Re","Os","Ir","Pt","Au","Hg","Tl","Pb","Bi","Po","At","Rn","Fr","Ra","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr","Rf","Db","Sg","Bh","Hs","Mt",
+	    "Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"];
+	    var tipo, certo, botao_certo, elemento_sorteado;
+		
+           Novapergunta();
+		 
+	    function Novapergunta(){
+		tipo = Math.floor(Math.random() * 4);
+		elemento_sorteado = Math.floor(Math.random() * 118);
+	  	botao_certo = Math.floor(Math.random() * 4);
 	    
-	    if(tipo == 0){
-		 document.querySelector('.pergunta').textContent = perguntas[tipo] + simbolos[elemento_sorteado];
+	    
+	        if(tipo == 0){
+		     document.querySelector('.pergunta').textContent = perguntas[tipo] + simbolos[elemento_sorteado];
 
-	    }else{
-		 document.querySelector('.pergunta').textContent =  perguntas[tipo] + elementos[elemento_sorteado];     
-	    }
+	        }else{
+		      document.querySelector('.pergunta').textContent =  perguntas[tipo] + elementos[elemento_sorteado];     
+		}
 	    
-	    document.querySelector(botoes[botao]).textContent = "certo";
+	    	document.querySelector(botoes[botao_certo]).textContent = "certo";
 	  
-	   
+	    }
             function Enviar(x) {
-		if(botao == x){
+		if(botao_certo == x){
 			certo = certo + 1;
 			console.log(certo);
 		}		
