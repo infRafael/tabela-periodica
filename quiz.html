@@ -66,7 +66,7 @@
           <script>
 	    var opcao_pergunta = ["Qual é o elemento representado pelo simbolo ", "Qual simbolo representa o elemento ", "Qual o numero atômico do elemento ", "Qual a classificação do elemento "];
 	    var pergunta, elemento_sorteado;
-	    var nums = [0,0,0,0];
+	    var nums = [0,0,0,0,0];
 	    var elementos = ["Hidrogênio","Hélio","Lítio","Berílio","Boro","Carbono","Nitrogênio","Oxigênio", "Flúor", "Neônio","Sódio","Magnésio","Alumínio","Silício","Fósforo",
 	    "Enxofre","Cloro","Argônio","Potássio","Cálcio","Escândio","Titânio","Vanádio","Crômio","Manganês","Ferro","Cobalto","Níquel","Cobre","Zinco","Gálio","Germânio","Arsênio",
 	    "Selênio","Bromo","Criptônio","Rubídio","Estrôncio","Ítrio","Zircônico","Nióbio","Molibdênio","Tecnécio","Rutênio","Ródio","Paládio","Prata","Cádmio","Índio","Estanho","Antimônio",
@@ -91,7 +91,7 @@
 		    pergunta =  3;
 		    elemento_sorteado =  Math.floor(Math.random() * 118);
 		    botao_certo =  Math.floor(Math.random() * 4);
-		    document.querySelector('.pergunta').textContent = opcao_pergunta[pergunta];
+		    document.querySelector('.pergunta').textContent = opcao_pergunta[pergunta] + elementos[elemento_sorteado];
 
 		    if(pergunta == 3){
 			for(nums[0] = 0; nums[0] < 8; nums[0]++){
