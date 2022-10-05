@@ -1,0 +1,63 @@
+body{
+    font-family: "Poppins", sans-serif;
+    background: #1f031a;
+  }
+  
+  .navbar{
+    background-color:  rgba(75, 75, 75, 0.1);
+    padding: 20px;
+    margin-bottom: 50px;
+    color: #e8e8e8;
+  }
+  
+  button{
+    height: 80px;
+    width: 80px;
+    border: none;
+    background: none;
+    transition: inherit;
+  }
+  
+  .tabela{
+    display: grid;
+    grid-template-columns: repeat(18, 88px);
+    grid-template-rows: repeat(9, 88px);
+    grid-gap: 6px;
+    margin: auto;
+    justify-content: center;
+    background: #1f031a;
+  }
+  
+  .elemento{
+    background: #fff;
+    padding: 4px;
+    position: relative;
+    z-index: 1;
+    cursor: default;
+    transition: all 0.3s ease;
+  }
+  
+  .elemento .titulo{
+    font: 700 26.1538px "Poppins";
+    margin: 0.3em 0 0;
+  }
+  .elemento .texto{
+    font: 500 12px "Poppins";
+    margin-top: -0.2em;
+  }
+ 
+ 
+  .elemento{
+    cursor: pointer;
+  }
+  
+  
+ 
+  
+  .empty-space-16{
+    grid-column: 17;
+  }
+  .empty-space-10{
+    grid-column: 12;
+  }
+  
