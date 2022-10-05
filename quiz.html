@@ -112,27 +112,21 @@
           
 
           
-          <script>
-	    var opcao_pergunta = ["Qual é o elemento representado pelo simbolo ", "Qual simbolo representa o elemento ", "Qual o numero atômico do elemento ", "Qual a classificação do elemento "];
+        <script>
+	    var opcao_pergunta = ["Qual é o elemento representado pelo simbolo ", "Qual símbolo representa o elemento ", "Qual o número atômico do elemento ", "Qual a classificação do elemento ", "Qual a família do elemento de distribuição eletrônica "];
 	    var pergunta, elemento_sorteado, botao_certo, acerto = 0, total = 1, cont = 0;
 	    var nums = [0,0,0,0,0];
 	    var elementos = ["Hidrogênio","Hélio","Lítio","Berílio","Boro","Carbono","Nitrogênio","Oxigênio", "Flúor", "Neônio","Sódio","Magnésio","Alumínio","Silício","Fósforo",
 	    "Enxofre","Cloro","Argônio","Potássio","Cálcio","Escândio","Titânio","Vanádio","Crômio","Manganês","Ferro","Cobalto","Níquel","Cobre","Zinco","Gálio","Germânio","Arsênio",
 	    "Selênio","Bromo","Criptônio","Rubídio","Estrôncio","Ítrio","Zircônico","Nióbio","Molibdênio","Tecnécio","Rutênio","Ródio","Paládio","Prata","Cádmio","Índio","Estanho","Antimônio",
-	    "Telúrio","Iodo","Xenônio","Césio","Bário","Lantânio","Cério","Praseodimio","Neodímio","Promécio","Samário","Európio","Gadolínio","Térbio","Disprósio","Hólmio","Érbio","Túlio","Itérbio",
-	    "Lutécio","Háfnio","Tântalo","Tungstênio","Rênio","Ósmio","Irídio","Platina","Ouro","Mercurio","Tálio","Chumbo","Bismuto","Polônio","Astato","Randônio","Frâncio","Rádio",
+	    "Telúrio","Iodo","Xenônio","Césio","Bário","Lantânio","Cério","Praseodímio","Neodímio","Promécio","Samário","Európio","Gadolínio","Térbio","Disprósio","Hólmio","Érbio","Túlio","Itérbio",
+	    "Lutécio","Háfnio","Tântalo","Tungstênio","Rênio","Ósmio","Irídio","Platina","Ouro","Mercúrio","Tálio","Chumbo","Bismuto","Polônio","Astato","Randônio","Frâncio","Rádio",
 	    "Actínio","Tório","Protactínio","Urânio","Netúnio","Plutônio","Amerício","Cúrio","Berquélio","Califórnio","Einstênio","Férmio","Mendelévio","Nobélio","Laurêncio",
-	    "Rutherfórdio","Dúbnio","Seaborgio","Bóhrio","Hássio","Meitnério","Darmstádtio","Roentgênio","Copernício","Nihônio","Fleróvio","Moscóvio","Livermório","Tenessino","Oganessônio"];		  
-            var classificacao = ["Não metal","Gás nobre","Metal alcalino","Metal alcalino-terroso","Semimetal","Não metal","Não metal","Não metal","Halogênio","Gás nobre"
-	    ,"Metal alcalino","Metal alcalino-terroso","Outro metal","Semimetal","Não metal","Não metal","Halogênio","Gás nobre","Metal alcalino","Metal alcalino-terroso","Metal de transição","Metal de transição",
-	    "Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Outro metal","Semimetal","Semimetal",
-	    "Não metal","Halogênio","Gás nobre","Metal alcalino","Metal alcalino-terroso","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição",
-	    "Metal de transição","Metal de transição","Metal de transição","Metal de transição","Outro metal","Outro metal","Semimetal","Semimetal","Halogênio","Gás nobre","Metal alcalino","Metal alcalino-terroso","Lantanídeo",
-	    "Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","LantanídeoLantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Metal de transição",
-	    "Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Outro metal","Outro metal","Outro metal","Semimetal",
-	    "Halogênio","Gás nobre","Metal alcalino","Metal alcalino-terroso","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo",
-	    "Actinídeo","Actinídeo","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Metal de transição","Outro metal",
-	    "Outro metal","Outro metal","Outro metal","Halogênio","Gás nobre"];
+	    "Rutherfórdio","Dúbnio","Seabórgio","Bóhrio","Hássio","Meitnério","Darmstádtio","Roentgênio","Copernício","Nihônio","Fleróvio","Moscóvio","Livermório","Tenessino","Oganessônio"];		  
+        var classificacao = ["N/A","Gás nobre","Metal","Metal","Semimetal","Ametal","Ametal","Ametal","Ametal","Gás nobre","Metal","Metal","Metal","Semimetal","Ametal","Ametal","Ametal","Gás nobre"
+        ,"Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Semimetal","Semimetal","Ametal","Ametal","Gás nobre","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Semimetal","Semimetal","Ametal","Gás nobre"
+        ,"Metal","Metal","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","LantanídeoLantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal",
+        "Semimetal","Ametal","Gás nobre","Metal","Metal","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Ametal","Gás nobre"];
         var simbolos = ["H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl","Ar","K","Ca","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Ga","Ge","As","Se","Br",
 		"Kr","Rb","Sr","Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd","In","Sn","Sb","Te","I","Xe","Cs","Ba","La","Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu","Hf",
 		"Ta","W","Re","Os","Ir","Pt","Au","Hg","Tl","Pb","Bi","Po","At","Rn","Fr","Ra","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr","Rf","Db","Sg","Bh","Hs","Mt",
@@ -142,6 +136,14 @@
         var cores = ["","linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%)","linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%)","linear-gradient(to bottom right, #fa7f72 0%, #ffc171 100%)","linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%)",
         "linear-gradient(to bottom right, #f12323 0%, #f85353 100%)","linear-gradient(to bottom right, #4ad3d8 0%, #1bf7ff 100%)","linear-gradient(to bottom right, #5153f3 0%, #787af3 100%)","linear-gradient(to bottom right, #63796b 0%, #83a790 100%)",
         "linear-gradient(to bottom right, #788a15 0%, #b6cf26 100%)","linear-gradient(to bottom right, #ee7498 0%, #eba3b8 100%)"];
+        var fam = ["Metais Alcalinos", "Metais Alcalinos-Terrosos","Metais de Transição","Família do Boro","Família do Carbono","Família do Nitrôgenio", "Calcogênicos","Halogênicos","Gases Nobres"];
+        var familia = ["Metais Alcalinos","Gases Nobres","Metais Alcalinos","Metais Alcalinos-Terrosos","Família do Boro","Família do Carbono","Família do Nitrogênio","Calcogênios","Halogênios","Gases Nobres","Metais Alcalinos","Metais Alcalinos-Terrosos","Família do Boro","Família do Carbono","Família do Nitrogênio","Calcogênios","Halogênios","Gases Nobres","Metais Alcalinos","Metais Alcalinos-Terrosos","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Família do Boro","Família do Carbono","Família do Nitrogênio","Calcogênios","Halogênios",
+        "Gases Nobres","Metais Alcalinos","Metais Alcalinos-Terrosos","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Família do Boro","Família do Carbono","Família do Nitrogênio","Calcogênios","Halogênios","Gases Nobres","Metais Alcalinos","Metais Alcalinos-Terrosos","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição",
+        "Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Família do Boro","Família do Carbono","Família do Nitrogênio","Calcogênios","Halogênios","Gases Nobres","Metais Alcalinos","Metais Alcalinos-Terrosos","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Família do Boro",
+        "Família do Carbono","Família do Nitrogênio","Calcogênios","Halogênios","Gases Nobres"];
+        var distribuicao = ["1s1","1s2","1s2 2s1","1s2 2s2","1s2 2s2 2p1","1s2 2s2 2p2","1s2 2s2 2p3","1s2 2s2 2p4","1s2 2s2 2p5","1s2 2s2 2p6","[Ne] 3s1","[Ne] 3s2","[Ne] 3s2 3p1","[Ne] 3s2 3p2","[Ne] 3s2 3p3","[Ne] 3s2 3p4","[Ne] 3s2 3p5","[Ne] 3s2 3p6","[Ar] 4s1","[Ar] 4s2","[Ar] 3d1 4s2","[Ar] 3d2 4s2","[Ar] 3d3 4s2","[Ar] 3d5 4s1","[Ar] 3d5 4s2","[Ar] 3d6 4s2","[Ar] 3d7 4s2","[Ar] 3d8 4s2","[Ar] 3d10 4s1","[Ar] 3d10 4s2","[Ar] 3d10 4s2 4p1","[Ar] 3d10 4s2 4p2","[Ar] 3d10 4s2 4p3","[Ar] 3d10 4s2 4p4","[Ar] 3d10 4s2 4p5","[Ar] 3d10 4s2 4p6","[Kr] 5s1","[Kr] 5s2","[Kr] 4d1 5s2","[Kr] 4d2 5s2","[Kr] 4d4 5s1","[Kr] 4d5 5s1","[Kr] 4d5 5s2","[Kr] 4d7 5s1","[Kr] 4d8 5s1","[Kr] 4d10 5s0","[Kr] 4d10 5s1","[Kr] 4d10 5s2","[Kr] 4d10 5s2 5p1","[Kr] 4d10 5s2 5p2","[Kr] 4d10 5s2 5p3","[Kr] 4d10 5s2 5p4","[Kr] 4d10 5s2 5p5","[Kr] 4d10 5s2 5p6",
+        "[Xe] 6s1","[Xe] 6s2","[Xe] 5d1 6s2","[Xe] 4f2 6s2","[Xe] 4f3 6s2","[Xe] 4f4 6s2","[Xe]  4f5 6s2","[Xe] 4f6 6s2","[Xe] 4f7 6s2","[Xe] 4f7 5d1 6s2","[Xe] 4f9 6s2","[Xe] 4f10 6s2","[Xe] 4f11 6s2","[Xe] 4f12 6s2","[Xe] 4f13 6s2","[Xe] 4f14 6s2","4f14 5d1 6s2","[Xe] 4f14 5d2 6s2","[Xe] 4f14 5d3 6s2","[Xe] 4f14 5d4 6s2","[Xe] 4f14 5d5 6s2","[Xe] 4f14 5d6 6s2","[Xe] 4f14 5d7 6s2","[Xe] 4f14 5d9 6s1","[Xe] 4f14 5d10 6s1","[Xe] 4f14 5d10 6s2","[Xe] 4f14 5d10 6s2 6p1","[Xe] 4f14 5d10 6s2 6p2","[Xe] 4f14 5d10 6s2 6p3","[Xe] 4f14 5d10 6s2 6p4","[Xe] 4f14 5d10 6s2 6p5","[Xe] 4f14 5d10 6s2 6p6",
+        "[Rn] 7s1","[Rn] 7s2","[Rn] 6d1 7s2","[Rn] 6d2 7s2","[Rn] 5f2 6d1 7s2","[Rn] 5f3 6d1 7s2","[Rn] 5f4 6d1 7s2","[Rn] 5f6 7s2","[Rn] 5f7 7s2","[Rn] 5f7 6d1 7s2","[Rn] 5f9 7s2","[Rn] 5f10 7s2","[Rn] 5f11 7s2","[Rn] 5f12 7s2","[Rn] 5f13 7s2","[Rn] 5f14 7s2","[Rn] 5f14 7s2 7p1","[Rn] 5f14 6d2 7s2","[Rn] 5f14 6d3 7s2","[Rn] 5f14 6d4 7s2","[Rn] 5f14 6d5 7s2","[Rn] 5f14 6d6 7s2","[Rn] 5f14 6d7 7s2","[Rn] 5f14 6d9 7s1","[Rn] 5f14 6d10 7s1","[Rn] 5f14 6d10 7s2","[Rn] 5f14 6d10 7s2 7p1","[Rn] 5f14 6d10 7s2 7p2","[Rn] 5f14 6d10 7s2 7p3","[Rn] 5f14 6d10 7s2 7p4","[Rn] 5f14 6d10 7s2 7p5","[Rn] 5f14 6d10 7s2 7p6"];
 	    var  iniciou = 0;
         document.querySelector('.pergunta').textContent = "Quiz dos Elementos Químicos";
         document.querySelector('.botao5').textContent = "Iniciar";
@@ -153,7 +155,7 @@
             document.querySelector('.botao5').style.display = "none";
             document.querySelector('.placar').textContent = total + '/10';
 
-		    pergunta =  Math.floor(Math.random() * 4);
+		    pergunta =  Math.floor(Math.random() * 5);
 		    elemento_sorteado =  Math.floor(Math.random() * 118);
 		    botao_certo =  Math.floor(Math.random() * 4);
             
@@ -179,7 +181,7 @@
             document.querySelector('.pontuacao').style.background=cores[total];
             document.querySelector('.pontuacao').style.webkitBackgroundClip='text';
             document.querySelector('.pontuacao').style.webkitTextFill='transparent';
-		    if(pergunta != 3){
+		    if(pergunta != 3 && pergunta != 4){
                 do{
                 nums[0] =  Math.floor(Math.random() * 118);
                 }while(nums[0] == elemento_sorteado);
@@ -213,7 +215,7 @@
                     }
                     document.querySelector(botoes[botao_certo]).textContent = '' + (elemento_sorteado + 1);
                 }
-            }else{
+            }else if (pergunta == 3){
                 document.querySelector('.pergunta').textContent = opcao_pergunta[pergunta] + elementos[elemento_sorteado];
                 for(nums[0] = 0; nums[0] < 8; nums[0]++){
                     if (classes[nums[0]] == classificacao[elemento_sorteado])
@@ -235,6 +237,28 @@
                     document.querySelector(botoes[x]).textContent = classes[nums[x+1]];
                 }
                 document.querySelector(botoes[botao_certo]).textContent = classes[nums[0]];
+            }else{
+                document.querySelector('.pergunta').textContent = opcao_pergunta[pergunta] + distribuicao[elemento_sorteado];
+                for(nums[0] = 0; nums[0] < 8; nums[0]++){
+                    if (fam[nums[0]] == familia[elemento_sorteado])
+                        break;
+                }
+                do{
+                nums[1] =  Math.floor(Math.random() * 9);
+                }while(nums[1] == nums[0]);
+                do{
+                nums[2] =  Math.floor(Math.random() * 9);
+                }while(nums[2] == nums[1] || nums[2] == nums[0]);
+                do{
+                nums[3] =  Math.floor(Math.random() * 9);
+                }while(nums[3] == nums[2] || nums[3] == nums[1] || nums[3] == nums[0]);
+                do{
+                nums[4] =  Math.floor(Math.random() * 9);
+                }while(nums[4] == nums[3] || nums[4] == nums[2] || nums[4] == nums[1] || nums[4] == nums[0]);
+                for(var x = 0; x < 4; x++){
+                    document.querySelector(botoes[x]).textContent = fam[nums[x+1]];
+                }
+                document.querySelector(botoes[botao_certo]).textContent = fam[nums[0]];
             }
         }
         function Enviar(validar){
@@ -274,22 +298,15 @@
                     },1000);
                     }
                 }   
-
-            }
+                }
+            
             if(validar == 4 && total == 11){
                 total = 1;
                 cont = 0;
                 acerto = 0;
                 NovaPergunta();
             }
-        }
-            
-
-            
-
-        
-	    
-			  
+           }
           </script>
     </body>
   </html>
