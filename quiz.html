@@ -35,11 +35,13 @@
             .pergunta{
                 font-size: 50px;
                 margin-bottom: 10%;
+            }
+            .pergunta, .pontuacao, .placar{
                 background: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
-            .botoes{
+            .bts{
                 background-image: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
                 border: none;
                 border-radius: 10px;
@@ -51,11 +53,18 @@
                 font-size: 30px;
                 margin-bottom: 30px;
             }
-            .placar{
-                margin-bottom: 10px;
-                text-align: end;
-                font-size: 24px;
+            
+            .pontuacao{
+                text-align: center;
+                font-size: 20px;
+                margin-bottom: 40px;
             }
+            .placar{
+                text-align: center;
+                margin-top: -20px;
+                font-size: 20px;
+            }
+
             .mudar_cor{
               color: #f3f9a6;
             }
@@ -91,19 +100,20 @@
 			</div>
 		  </nav>
           <div class="organizacao">
-            <h2 class="placar">0/0</h2>
+            <h2 class="placar"></h2>
+            <h2 class="pontuacao"></h2>
             <h1 class="pergunta"></h1>
-            <button class="botoes botao1" onclick="Enviar(0)"></button>
-            <button class="botoes botao2" onclick="Enviar(1)"></button>
-            <button class="botoes botao3" onclick="Enviar(2)"></button>
-            <button class="botoes botao4" onclick="Enviar(3)"></button>
+            <button class="bts botao1" onclick="Enviar(0)"></button>
+            <button class="bts botao2" onclick="Enviar(1)"></button>
+            <button class="bts botao3" onclick="Enviar(2)"></button>
+            <button class="bts botao4" onclick="Enviar(3)"></button>
           </div>
           
 
           
           <script>
 	    var opcao_pergunta = ["Qual é o elemento representado pelo simbolo ", "Qual simbolo representa o elemento ", "Qual o numero atômico do elemento ", "Qual a classificação do elemento "];
-	    var pergunta, elemento_sorteado, botao_certo, acerto = 0, total = 0, cont = 0;
+	    var pergunta, elemento_sorteado, botao_certo, acerto = 0, total = 1, cont = 0;
 	    var nums = [0,0,0,0,0];
 	    var elementos = ["Hidrogênio","Hélio","Lítio","Berílio","Boro","Carbono","Nitrogênio","Oxigênio", "Flúor", "Neônio","Sódio","Magnésio","Alumínio","Silício","Fósforo",
 	    "Enxofre","Cloro","Argônio","Potássio","Cálcio","Escândio","Titânio","Vanádio","Crômio","Manganês","Ferro","Cobalto","Níquel","Cobre","Zinco","Gálio","Germânio","Arsênio",
@@ -128,13 +138,46 @@
 		"Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"];
 	    var classes = ["Não metal","Gás nobre","Metal alcalino","Metal alcalino-terroso","Semimetal","Halogênio","Metal de transição","Actinídeo","Lantanídeo"];
 	    var botoes = [".botao1",".botao2",".botao3",".botao4"];
-        var cores = ["linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);","linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%);","linear-gradient(to bottom right, #fa7f72 0%, #ffc171 100%);","","","","",""]
-	    NovaPergunta();
+        var cores = ["","linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%)","linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%)","linear-gradient(to bottom right, #fa7f72 0%, #ffc171 100%)","linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%)",
+        "linear-gradient(to bottom right, #f12323 0%, #f85353 100%)","linear-gradient(to bottom right, #4ad3d8 0%, #1bf7ff 100%)","linear-gradient(to bottom right, #5153f3 0%, #787af3 100%)","linear-gradient(to bottom right, #63796b 0%, #83a790 100%)",
+        "linear-gradient(to bottom right, #788a15 0%, #b6cf26 100%)","linear-gradient(to bottom right, #ee7498 0%, #eba3b8 100%)"];
+	    var ultima_cor, iniciou = 0;
+        document.querySelector('.pergunta').textContent = "Quiz dos Elementos Químicos";
+        document.querySelector('.botao4').textContent = "Iniciar";
+        document.querySelector('.botao1').style.display = "none";
+        document.querySelector('.botao2').style.display = "none";
+        document.querySelector('.botao3').style.display = "none";
+
 	    function NovaPergunta(){
+            document.querySelector('.placar').textContent = total + '/10';
+
 		    pergunta =  Math.floor(Math.random() * 4);
 		    elemento_sorteado =  Math.floor(Math.random() * 118);
 		    botao_certo =  Math.floor(Math.random() * 4);
-		    
+            
+            document.querySelector('.botao1').style.display = "";
+            document.querySelector('.botao2').style.display = "";
+            document.querySelector('.botao3').style.display = "";
+          
+            document.querySelector('.botao1').style.backgroundImage=cores[total];
+            document.querySelector('.botao2').style.backgroundImage=cores[total];
+            document.querySelector('.botao3').style.backgroundImage=cores[total];
+            document.querySelector('.botao4').style.backgroundImage=cores[total];
+            
+            document.querySelector('.bts').style.backgroundImage=cores[total];
+            document.querySelector('.bts').style.backgroundImage=cores[total];
+            document.querySelector('.bts').style.backgroundImage=cores[total];
+            document.querySelector('.organizacao').style.borderImage=cores[total];
+            document.querySelector('.organizacao').style.borderImageSlice='1';
+            document.querySelector('.pergunta').style.background=cores[total];
+            document.querySelector('.pergunta').style.webkitBackgroundClip='text';
+            document.querySelector('.pergunta').style.webkitTextFill='transparent';
+            document.querySelector('.placar').style.background=cores[total];
+            document.querySelector('.placar').style.webkitBackgroundClip='text';
+            document.querySelector('.placar').style.webkitTextFill='transparent';
+            document.querySelector('.pontuacao').style.background=cores[total];
+            document.querySelector('.pontuacao').style.webkitBackgroundClip='text';
+            document.querySelector('.pontuacao').style.webkitTextFill='transparent';
 		    if(pergunta != 3){
                 do{
                 nums[0] =  Math.floor(Math.random() * 118);
@@ -194,25 +237,54 @@
             }
         }
         function Enviar(validar){
-            if(cont == 0){
-                cont++;
-                if(validar == botao_certo ){
-                acerto++;
-                }else{
-                    document.querySelector(botoes[validar]).style.backgroundImage='linear-gradient(to bottom right, #ff0000 0%, #f73838 100%)';
-                }
-                document.querySelector(botoes[botao_certo]).style.backgroundImage='linear-gradient(to bottom right, #00ff00 0%, #23ff23 100%)';
-                total++;
-
-                document.querySelector('.placar').textContent = '' + acerto + '/' + total + '';
-
-                setTimeout(function(){
-                    cont = 0;
+            if(iniciou == 0){
+                document.querySelector('.pergunta').textContent = "Gostaria de iniciar o quiz?";
+                document.querySelector('.botao2').textContent = "Clique aqui para começar";
+                if(validar == 3){
+                    iniciou = 1;
                     NovaPergunta();
+                }
+            }else{
+                if(cont == 0){
+                    cont++;
+                    if(validar == botao_certo ){
+                    acerto++;
+                    }else{
+                        document.querySelector(botoes[validar]).style.backgroundImage='linear-gradient(to bottom right, #ff0000 0%, #f73838 100%)';
+                    }
+                    document.querySelector(botoes[botao_certo]).style.backgroundImage='linear-gradient(to bottom right, #00ff00 0%, #23ff23 100%)';
+                    total++;
+                    document.querySelector('.pontuacao').textContent = "Pontuação: " + acerto;
+                    
+                    if(total <= 10){
+                        setTimeout(function(){
+                        cont = 0;
+                        document.querySelector(botoes[validar]).style.backgroundImage=cores[total+1];
+                        document.querySelector(botoes[botao_certo]).style.backgroundImage=cores[total+1];
+                        NovaPergunta();
+                    },1200);
+                    }else{
+                        document.querySelector('.pergunta').textContent = "Sua pontuação foi: " + acerto + ' de 10';
+                        document.querySelector('.botao4').textContent = "Reiniciar";
+                        document.querySelector('.botao1').style.display = "none";
+                        document.querySelector('.botao2').style.display = "none";
+                        document.querySelector('.botao3').style.display = "none";
+                    }
+                }   
 
-                },1000);
+            }
+            if(validar == 3 && total == 11){
+                total = 1;
+                cont = 0;
+                acerto = 0;
+                NovaPergunta();
             }
         }
+            
+
+            
+
+        
 	    
 			  
           </script>
