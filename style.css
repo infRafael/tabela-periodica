@@ -215,3 +215,10 @@ button{
   text-decoration: none;
   cursor: pointer;
 }
+
+.mudar_cor{
+  color: #f3f9a6;
+}
+.mudar_cor:hover{
+  color:#cbc634; 
+}
