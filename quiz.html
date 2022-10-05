@@ -5,6 +5,10 @@
         <title>Sobre</title>
         <meta charset="UTF-8">	
         <style>
+            *:focus:not(a){
+              outline:none;
+              box-shadow: none !important;
+            }
             .navbar{
                  background-color:  rgba(75, 75, 75, 0.1);
                   padding: 20px;
@@ -58,6 +62,9 @@
             .mudar_cor:hover{
               color:#cbc634; 
             }
+        
+                
+            
         </style>
     </head>
     <body>
@@ -96,7 +103,7 @@
           
           <script>
 	    var opcao_pergunta = ["Qual é o elemento representado pelo simbolo ", "Qual simbolo representa o elemento ", "Qual o numero atômico do elemento ", "Qual a classificação do elemento "];
-	    var pergunta, elemento_sorteado, botao_certo, acerto = 0, total = 0;
+	    var pergunta, elemento_sorteado, botao_certo, acerto = 0, total = 0, cont = 0;
 	    var nums = [0,0,0,0,0];
 	    var elementos = ["Hidrogênio","Hélio","Lítio","Berílio","Boro","Carbono","Nitrogênio","Oxigênio", "Flúor", "Neônio","Sódio","Magnésio","Alumínio","Silício","Fósforo",
 	    "Enxofre","Cloro","Argônio","Potássio","Cálcio","Escândio","Titânio","Vanádio","Crômio","Manganês","Ferro","Cobalto","Níquel","Cobre","Zinco","Gálio","Germânio","Arsênio",
@@ -121,6 +128,7 @@
 		"Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"];
 	    var classes = ["Não metal","Gás nobre","Metal alcalino","Metal alcalino-terroso","Semimetal","Halogênio","Metal de transição","Actinídeo","Lantanídeo"];
 	    var botoes = [".botao1",".botao2",".botao3",".botao4"];
+        var cores = ["linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);","linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%);","linear-gradient(to bottom right, #fa7f72 0%, #ffc171 100%);","","","","",""]
 	    NovaPergunta();
 	    function NovaPergunta(){
 		    pergunta =  Math.floor(Math.random() * 4);
@@ -186,12 +194,24 @@
             }
         }
         function Enviar(validar){
-            if(validar == botao_certo){
+            if(cont == 0){
+                cont++;
+                if(validar == botao_certo ){
                 acerto++;
+                }else{
+                    document.querySelector(botoes[validar]).style.backgroundImage='linear-gradient(to bottom right, #ff0000 0%, #f73838 100%)';
+                }
+                document.querySelector(botoes[botao_certo]).style.backgroundImage='linear-gradient(to bottom right, #00ff00 0%, #23ff23 100%)';
+                total++;
+
+                document.querySelector('.placar').textContent = '' + acerto + '/' + total + '';
+
+                setTimeout(function(){
+                    cont = 0;
+                    NovaPergunta();
+
+                },1000);
             }
-            total++;
-            document.querySelector('.placar').textContent = '' + acerto + '/' + total + '';
-            NovaPergunta();
         }
 	    
 			  
