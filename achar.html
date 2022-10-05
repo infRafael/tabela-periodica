@@ -172,7 +172,7 @@
 			<div class="elemento 99"><button onclick="Modal(99)"><div class="titulo">Fm</div><div class="texto">Férmio</div></div></button>
 			<div class="elemento 100"><button onclick="Modal(100)"><div class="titulo">Md</div><div class="texto">Mendelévio</div></div></button>
 			<div class="elemento 101"><button onclick="Modal(101)"><div class="titulo">No</div><div class="texto">Nobélio</div></div></button>
-			<div class="elemento a102"><button onclick="Modal(102)"><div class="titulo">Lr</div><div class="texto">Laurêncio</div></div></button>
+			<div class="elemento102"><button onclick="Modal(102)"><div class="titulo">Lr</div><div class="texto">Laurêncio</div></div></button>
 		</div>  
 		<script>
 			var elementos =  ["Hidrogênio","Hélio","Lítio","Berílio","Boro","Carbono","Nitrogênio","Oxigênio", "Flúor", "Neônio","Sódio","Magnésio","Alumínio","Silício","Fósforo",
@@ -190,6 +190,7 @@
 					console.log("acertar");
 					sorteado = Math.floor(Math.random() * 118);
 					document.querySelector('.elemento-sorteado').textContent = "Encontre o " + elementos[sorteado];
+					document.querySelector(''+ x).style.color = "#1f031a";
 				}
 				
 			}
