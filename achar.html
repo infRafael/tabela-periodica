@@ -42,6 +42,7 @@
           </ul>
         </div>
         </nav>
+		<h1 class="elemento-sorteado"></h1>
         <div class="tabela">
 			<div class="elemento 0"><button onclick="Modal(0)"><div class="titulo">H</div><div class="texto">Hidrogênio</div></div></button>
 			<div class="empty-space-16"></div>
@@ -171,8 +172,29 @@
 			<div class="elemento 99"><button onclick="Modal(99)"><div class="titulo">Fm</div><div class="texto">Férmio</div></div></button>
 			<div class="elemento 100"><button onclick="Modal(100)"><div class="titulo">Md</div><div class="texto">Mendelévio</div></div></button>
 			<div class="elemento 101"><button onclick="Modal(101)"><div class="titulo">No</div><div class="texto">Nobélio</div></div></button>
-			<div class="elemento 102"><button onclick="Modal(102)"><div class="titulo">Lr</div><div class="texto">Laurêncio</div></div></button>
+			<div class="elemento a102"><button onclick="Modal(102)"><div class="titulo">Lr</div><div class="texto">Laurêncio</div></div></button>
 		</div>  
+		<script>
+			var elementos =  ["Hidrogênio","Hélio","Lítio","Berílio","Boro","Carbono","Nitrogênio","Oxigênio", "Flúor", "Neônio","Sódio","Magnésio","Alumínio","Silício","Fósforo",
+			"Enxofre","Cloro","Argônio","Potássio","Cálcio","Escândio","Titânio","Vanádio","Crômio","Manganês","Ferro","Cobalto","Níquel","Cobre","Zinco","Gálio","Germânio","Arsênio",
+			"Selênio","Bromo","Criptônio","Rubídio","Estrôncio","Ítrio","Zircônico","Nióbio","Molibdênio","Tecnécio","Rutênio","Ródio","Paládio","Prata","Cádmio","Índio","Estanho","Antimônio",
+			"Telúrio","Iodo","Xenônio","Césio","Bário","Lantânio","Cério","Praseodímio","Neodímio","Promécio","Samário","Európio","Gadolínio","Térbio","Disprósio","Hólmio","Érbio","Túlio","Itérbio",
+			"Lutécio","Háfnio","Tântalo","Tungstênio","Rênio","Ósmio","Irídio","Platina","Ouro","Mercúrio","Tálio","Chumbo","Bismuto","Polônio","Astato","Randônio","Frâncio","Rádio",
+			"Actínio","Tório","Protactínio","Urânio","Netúnio","Plutônio","Amerício","Cúrio","Berquélio","Califórnio","Einstênio","Férmio","Mendelévio","Nobélio","Laurêncio",
+			"Rutherfórdio","Dúbnio","Seabórgio","Bóhrio","Hássio","Meitnério","Darmstádtio","Roentgênio","Copernício","Nihônio","Fleróvio","Moscóvio","Livermório","Tenessino","Oganessônio"];
+			sorteado = Math.floor(Math.random() * 118);
+			document.querySelector('.elemento-sorteado').textContent = elementos[sorteado];
+			
+			function Modal(x){
+				if(sorteado == x){
+					console.log("acertar");
+					sorteado = Math.floor(Math.random() * 118);
+					document.querySelector('.elemento-sorteado').textContent = "Encontre o " + elementos[sorteado];
+				}
+				
+			}
+
+		</script>
     </body>
 </html>
   

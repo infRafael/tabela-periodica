@@ -1,4 +1,4 @@
-body{
+  body{
     font-family: "Poppins", sans-serif;
     background: #1f031a;
   }
@@ -40,19 +40,18 @@ body{
   .elemento .titulo{
     font: 700 26.1538px "Poppins";
     margin: 0.3em 0 0;
+  
   }
   .elemento .texto{
     font: 500 12px "Poppins";
     margin-top: -0.2em;
+    
   }
  
  
   .elemento{
     cursor: pointer;
   }
-  
-  
- 
   
   .empty-space-16{
     grid-column: 17;
@@ -61,3 +60,11 @@ body{
     grid-column: 12;
   }
   
+  *:focus:not(a){
+    outline:none;
+    box-shadow: none !important;
+  }
+
+  .elemento_sorteado{
+    color:#e8e8e8;
+  }
