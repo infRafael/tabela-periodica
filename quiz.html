@@ -22,7 +22,7 @@
             .organizacao{
               background-color: #1f031a; 
               border-radius: 20px;
-              border: 6px solid transparent; 
+              border: 10px solid transparent; 
               border-image: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
               border-image-slice: 1;
               margin-top:10%;
@@ -107,6 +107,7 @@
             <button class="bts botao2" onclick="Enviar(1)"></button>
             <button class="bts botao3" onclick="Enviar(2)"></button>
             <button class="bts botao4" onclick="Enviar(3)"></button>
+            <button class="bts botao5" onclick="Enviar(4)"></button>
           </div>
           
 
@@ -141,14 +142,15 @@
         var cores = ["","linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%)","linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%)","linear-gradient(to bottom right, #fa7f72 0%, #ffc171 100%)","linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%)",
         "linear-gradient(to bottom right, #f12323 0%, #f85353 100%)","linear-gradient(to bottom right, #4ad3d8 0%, #1bf7ff 100%)","linear-gradient(to bottom right, #5153f3 0%, #787af3 100%)","linear-gradient(to bottom right, #63796b 0%, #83a790 100%)",
         "linear-gradient(to bottom right, #788a15 0%, #b6cf26 100%)","linear-gradient(to bottom right, #ee7498 0%, #eba3b8 100%)"];
-	    var ultima_cor, iniciou = 0;
+	    var  iniciou = 0;
         document.querySelector('.pergunta').textContent = "Quiz dos Elementos Químicos";
-        document.querySelector('.botao4').textContent = "Iniciar";
+        document.querySelector('.botao5').textContent = "Iniciar";
         document.querySelector('.botao1').style.display = "none";
         document.querySelector('.botao2').style.display = "none";
         document.querySelector('.botao3').style.display = "none";
-
+        document.querySelector('.botao4').style.display = "none";
 	    function NovaPergunta(){
+            document.querySelector('.botao5').style.display = "none";
             document.querySelector('.placar').textContent = total + '/10';
 
 		    pergunta =  Math.floor(Math.random() * 4);
@@ -158,15 +160,14 @@
             document.querySelector('.botao1').style.display = "";
             document.querySelector('.botao2').style.display = "";
             document.querySelector('.botao3').style.display = "";
-          
+            document.querySelector('.botao4').style.display = "";
+
             document.querySelector('.botao1').style.backgroundImage=cores[total];
             document.querySelector('.botao2').style.backgroundImage=cores[total];
             document.querySelector('.botao3').style.backgroundImage=cores[total];
             document.querySelector('.botao4').style.backgroundImage=cores[total];
-            
-            document.querySelector('.bts').style.backgroundImage=cores[total];
-            document.querySelector('.bts').style.backgroundImage=cores[total];
-            document.querySelector('.bts').style.backgroundImage=cores[total];
+            document.querySelector('.botao5').style.backgroundImage=cores[total];
+
             document.querySelector('.organizacao').style.borderImage=cores[total];
             document.querySelector('.organizacao').style.borderImageSlice='1';
             document.querySelector('.pergunta').style.background=cores[total];
@@ -238,9 +239,7 @@
         }
         function Enviar(validar){
             if(iniciou == 0){
-                document.querySelector('.pergunta').textContent = "Gostaria de iniciar o quiz?";
-                document.querySelector('.botao2').textContent = "Clique aqui para começar";
-                if(validar == 3){
+                if(validar == 4){
                     iniciou = 1;
                     NovaPergunta();
                 }
@@ -262,18 +261,22 @@
                         document.querySelector(botoes[validar]).style.backgroundImage=cores[total+1];
                         document.querySelector(botoes[botao_certo]).style.backgroundImage=cores[total+1];
                         NovaPergunta();
-                    },1200);
+                    },1000);
                     }else{
+                        setTimeout(function(){
                         document.querySelector('.pergunta').textContent = "Sua pontuação foi: " + acerto + ' de 10';
-                        document.querySelector('.botao4').textContent = "Reiniciar";
+                        document.querySelector('.botao5').textContent = "Reiniciar";
+                        document.querySelector('.botao5').style.display = "";
                         document.querySelector('.botao1').style.display = "none";
                         document.querySelector('.botao2').style.display = "none";
                         document.querySelector('.botao3').style.display = "none";
+                        document.querySelector('.botao4').style.display = "none";
+                    },1000);
                     }
                 }   
 
             }
-            if(validar == 3 && total == 11){
+            if(validar == 4 && total == 11){
                 total = 1;
                 cont = 0;
                 acerto = 0;
