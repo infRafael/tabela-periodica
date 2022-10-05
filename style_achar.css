@@ -6,7 +6,7 @@
   .navbar{
     background-color:  rgba(75, 75, 75, 0.1);
     padding: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     color: #e8e8e8;
   }
   
@@ -29,7 +29,8 @@
   }
   
   .elemento{
-    background: #fff;
+    border: 3px solid;
+    border-color: #fff;
     padding: 4px;
     position: relative;
     z-index: 1;
@@ -39,15 +40,17 @@
   
   .elemento .titulo{
     font: 700 26.1538px "Poppins";
-    margin: 0.3em 0 0;
+    margin-left: -0.25em;
+    margin-top: -0.2em;
+    color: #1f031a; 
   
   }
   .elemento .texto{
     font: 500 12px "Poppins";
     margin-top: -0.2em;
-    
+    margin-left: -0.25em;
+    color: #1f031a;
   }
- 
  
   .elemento{
     cursor: pointer;
