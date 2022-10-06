@@ -104,19 +104,19 @@ button{
 }
 
 .cinco{
-  background: linear-gradient(to bottom right, #f12323 0%, #f85353 100%);
+  background: linear-gradient(to bottom right, rgb(255, 151, 0) 0%, rgb(227, 108, 0) 100%);
 }
 .cinco .titulo, .cinco .texto{
-  background: -webkit-linear-gradient(#f12323, #f85353);
+  background: -webkit-linear-gradient(rgb(255, 151, 0), rgb(227, 108, 0));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .seis{
-  background: linear-gradient(to bottom right, #4ad3d8 0%, #1bf7ff 100%);
+  background: linear-gradient(to bottom right, rgba(124,247,255,1) 0%, rgba(31,230,244,1) 100%);
 }
 .seis .titulo, .seis .texto{
-  background: -webkit-linear-gradient(#4ad3d8, #1bf7ff);
+  background: -webkit-linear-gradient(rgba(124,247,255,1) , rgba(31,230,244,1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -131,10 +131,10 @@ button{
 }
 
 .oito{
-  background: linear-gradient(to bottom right, #63796b 0%, #83a790 100%);
+  background: linear-gradient(to bottom right, rgba(67,207,157,1)0%, rgba(45,158,118,1) 100%);
 }
 .oito .titulo, .oito .texto, .oito .texto2{
-  background: -webkit-linear-gradient(#63796b, #83a790);
+  background: -webkit-linear-gradient(rgba(67,207,157,1), rgba(45,158,118,1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -153,6 +153,16 @@ button{
 }
 .dez .titulo, .dez .texto{
   background: -webkit-linear-gradient(#ee7498, #eba3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.branco-marfim{
+  background: linear-gradient(to bottom right, #fffff0 0%, #e8e8e8 100%);
+}
+
+.branco-marfim .titulo, .branco-marfim .texto{
+  background: -webkit-linear-gradient(#fffff0, #e8e8e8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
