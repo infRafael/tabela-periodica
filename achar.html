@@ -37,7 +37,8 @@
   
   .elemento{
     border: 3px solid;
-    border-color: #fff;
+    border-image: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
+	border-image-slice: 1;
     padding: 4px;
     position: relative;
     z-index: 1;
@@ -94,11 +95,21 @@
     box-shadow: none !important;
   }
 
-  .elemento_sorteado{
-    color:#e8e8e8;
+  .elemento-sorteado{
+    background: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 50px;
   }
-            
-        </style>
+  .mudar_cor{
+    color: #f3f9a6;
+  }
+  .mudar_cor:hover{
+    color:#cbc634; 
+   }
+  </style>
     </head>
     <body>
       <nav class="navbar navbar-expand-lg">
@@ -109,17 +120,20 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link  mudar_cor" href="radiacao.html">Decaimentos Radiotivos</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link mudar_cor" href="quiz.html">Quiz</a>
-          </li>
-            <li class="nav-item">
-              <a class="nav-link mudar_cor" href="avaliacao.html">Avaliação</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link mudar_cor" href="sobre.html">Sobre</a>
-            </li>
+				<a class="nav-link mudar_cor" href="radiacao.html">Decaimentos radiotivos</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link mudar_cor" href="quiz.html">Quiz</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link mudar_cor" href="achar.html">Encontre o elemento</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link mudar_cor" href="avaliacao.html">Avaliação</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link mudar_cor" href="sobre.html">Sobre</a>
+			</li>
           </ul>
         </div>
         </nav>
@@ -256,6 +270,7 @@
 			<div class="elemento e102"><button onclick="Modal(102)"><div class="titulo">Lr</div><div class="texto">Laurêncio</div></div></button>
 		</div>  
 		<script>
+			var total;
 			var elementos =  ["Hidrogênio","Hélio","Lítio","Berílio","Boro","Carbono","Nitrogênio","Oxigênio", "Flúor", "Neônio","Sódio","Magnésio","Alumínio","Silício","Fósforo",
 			"Enxofre","Cloro","Argônio","Potássio","Cálcio","Escândio","Titânio","Vanádio","Crômio","Manganês","Ferro","Cobalto","Níquel","Cobre","Zinco","Gálio","Germânio","Arsênio",
 			"Selênio","Bromo","Criptônio","Rubídio","Estrôncio","Ítrio","Zircônico","Nióbio","Molibdênio","Tecnécio","Rutênio","Ródio","Paládio","Prata","Cádmio","Índio","Estanho","Antimônio",
@@ -263,16 +278,27 @@
 			"Lutécio","Háfnio","Tântalo","Tungstênio","Rênio","Ósmio","Irídio","Platina","Ouro","Mercúrio","Tálio","Chumbo","Bismuto","Polônio","Astato","Randônio","Frâncio","Rádio",
 			"Actínio","Tório","Protactínio","Urânio","Netúnio","Plutônio","Amerício","Cúrio","Berquélio","Califórnio","Einstênio","Férmio","Mendelévio","Nobélio","Laurêncio",
 			"Rutherfórdio","Dúbnio","Seabórgio","Bóhrio","Hássio","Meitnério","Darmstádtio","Roentgênio","Copernício","Nihônio","Fleróvio","Moscóvio","Livermório","Tenessino","Oganessônio"];
+			var validador = [""*118];
+			do{
+				sorteado = Math.floor(Math.random() * 118);
+				console.log(sorteado);
+			}while(validador[sorteado] == 1);
 			
-			sorteado = Math.floor(Math.random() * 118);
-			document.querySelector('.elemento-sorteado').textContent = elementos[sorteado];
+			
+			document.querySelector('.elemento-sorteado').textContent = "Encontre o elemento " + elementos[sorteado];
 			
 			function Modal(x){
-				
 				if(sorteado == x){
-					console.log("acertar");
+					total++;
+					if(total == 118){
+
+					}
+					validador[sorteado] = 1;
+					do{
 					sorteado = Math.floor(Math.random() * 118);
-					document.querySelector('.elemento-sorteado').textContent = "Encontre o " + elementos[sorteado];
+					console.log(sorteado);
+					}while(validador[sorteado] == 1);
+					document.querySelector('.elemento-sorteado').textContent = "Encontre o elemento " + elementos[sorteado];
 					
 					document.querySelector(".e"+x).classList.add('elemento-acertado');
 
