@@ -43,24 +43,42 @@
     z-index: 1;
     cursor: default;
     transition: all 0.3s ease;
+	cursor: pointer;
   }
   
   .elemento .titulo{
     font: 700 26.1538px "Poppins";
     margin-left: -0.25em;
     margin-top: -0.2em;
-    color: #1f031a; 
+	display: none;
   
   }
   .elemento .texto{
     font: 500 12px "Poppins";
     margin-top: -0.2em;
     margin-left: -0.25em;
-    color: #1f031a;
+    display: none;
   }
- 
-  .elemento{
-    cursor: pointer;
+  .elemento-acertado{
+    border: 3px solid;
+    border-color: #0f0;
+    padding: 4px;
+    position: relative;
+    z-index: 1;
+    cursor: default;
+    transition: all 0.3s ease;
+	cursor: pointer;
+  }
+  .elemento-acertado .titulo{
+	font: 700 26.1538px "Poppins";
+    margin-left: -0.25em;
+    margin-top: -0.2em;
+
+  }
+  .elemento-acertado .texto{
+    font: 500 12px "Poppins";
+    margin-top: -0.2em;
+    margin-left: -0.25em;
   }
   
   .empty-space-16{
@@ -254,7 +272,10 @@
 					console.log("acertar");
 					sorteado = Math.floor(Math.random() * 118);
 					document.querySelector('.elemento-sorteado').textContent = "Encontre o " + elementos[sorteado];
-					document.querySelector('.e'+x).style.color ='#fff';
+					
+					document.querySelector(".e"+x).classList.add('elemento-acertado');
+
+					document.querySelector(".e"+x).classList.remove('elemento');
 				}
 				
 			}
