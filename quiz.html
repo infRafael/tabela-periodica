@@ -118,7 +118,7 @@
           
         <script>
 	    var opcao_pergunta = ["Qual é o elemento representado pelo simbolo ", "Qual símbolo representa o elemento ", "Qual o número atômico do elemento ", "Qual a classificação do elemento ", "Qual a família do elemento de distribuição eletrônica "];
-	    var pergunta, elemento_sorteado, botao_certo, acerto = 0, total = 1, cont = 0;
+	    var pergunta, elemento_sorteado, botao_certo, acerto = 0, total = 1, cont = 0, cor;
 	    var nums = [0,0,0,0,0];
 	    var elementos = ["Hidrogênio","Hélio","Lítio","Berílio","Boro","Carbono","Nitrogênio","Oxigênio", "Flúor", "Neônio","Sódio","Magnésio","Alumínio","Silício","Fósforo",
 	    "Enxofre","Cloro","Argônio","Potássio","Cálcio","Escândio","Titânio","Vanádio","Crômio","Manganês","Ferro","Cobalto","Níquel","Cobre","Zinco","Gálio","Germânio","Arsênio",
@@ -157,8 +157,8 @@
         document.querySelector('.botao4').style.display = "none";
 	    function NovaPergunta(){
             document.querySelector('.botao5').style.display = "none";
-            document.querySelector('.placar').textContent = total + '/10';
-
+            document.querySelector('.placar').textContent = total + '/15';
+            cor = Math.floor(Math.random() * 10);
 		    pergunta =  Math.floor(Math.random() * 5);
 		    elemento_sorteado =  Math.floor(Math.random() * 118);
 		    botao_certo =  Math.floor(Math.random() * 4);
@@ -168,23 +168,25 @@
             document.querySelector('.botao3').style.display = "";
             document.querySelector('.botao4').style.display = "";
 
-            document.querySelector('.botao1').style.backgroundImage=cores[total];
-            document.querySelector('.botao2').style.backgroundImage=cores[total];
-            document.querySelector('.botao3').style.backgroundImage=cores[total];
-            document.querySelector('.botao4').style.backgroundImage=cores[total];
-            document.querySelector('.botao5').style.backgroundImage=cores[total];
+            document.querySelector('.botao1').style.backgroundImage=cores[cor];
+            document.querySelector('.botao2').style.backgroundImage=cores[cor];
+            document.querySelector('.botao3').style.backgroundImage=cores[cor];
+            document.querySelector('.botao4').style.backgroundImage=cores[cor];
+            document.querySelector('.botao5').style.backgroundImage=cores[cor];
 
-            document.querySelector('.organizacao').style.borderImage=cores[total];
+            document.querySelector('.organizacao').style.borderImage=cores[cor];
             document.querySelector('.organizacao').style.borderImageSlice='1';
-            document.querySelector('.pergunta').style.background=cores[total];
+            document.querySelector('.pergunta').style.background=cores[cor];
             document.querySelector('.pergunta').style.webkitBackgroundClip='text';
             document.querySelector('.pergunta').style.webkitTextFill='transparent';
-            document.querySelector('.placar').style.background=cores[total];
+            document.querySelector('.placar').style.background=cores[cor];
             document.querySelector('.placar').style.webkitBackgroundClip='text';
             document.querySelector('.placar').style.webkitTextFill='transparent';
-            document.querySelector('.pontuacao').style.background=cores[total];
+            document.querySelector('.pontuacao').style.background=cores[cor];
             document.querySelector('.pontuacao').style.webkitBackgroundClip='text';
             document.querySelector('.pontuacao').style.webkitTextFill='transparent';
+            document.querySelector('.pontuacao').textContent = "Pontuação: " + acerto;
+
 		    if(pergunta != 3 && pergunta != 4){
                 do{
                 nums[0] =  Math.floor(Math.random() * 118);
@@ -283,7 +285,7 @@
                     total++;
                     document.querySelector('.pontuacao').textContent = "Pontuação: " + acerto;
                     
-                    if(total <= 10){
+                    if(total <= 15){
                         setTimeout(function(){
                         cont = 0;
                         document.querySelector(botoes[validar]).style.backgroundImage=cores[total+1];
@@ -292,7 +294,7 @@
                     },1000);
                     }else{
                         setTimeout(function(){
-                        document.querySelector('.pergunta').textContent = "Sua pontuação foi: " + acerto + ' de 10';
+                        document.querySelector('.pergunta').textContent = "Sua pontuação foi: " + acerto + ' de 15';
                         document.querySelector('.botao5').textContent = "Reiniciar";
                         document.querySelector('.botao5').style.display = "";
                         document.querySelector('.botao1').style.display = "none";
@@ -304,7 +306,7 @@
                 }   
                 }
             
-            if(validar == 4 && total == 11){
+            if(validar == 4 && total == 16){
                 total = 1;
                 cont = 0;
                 acerto = 0;
