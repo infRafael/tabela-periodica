@@ -66,6 +66,64 @@
             .mudar_cor:hover{
               color:#cbc634; 
             }
+            .modal {
+              display: none;
+              position: fixed; 
+              z-index: 1; 
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              overflow: auto; 
+              background-color: rgba(0,0,0,0.4); 
+            }
+
+
+            .modal-content {
+              background-color: #1f031a; 
+              border-radius: 0px 40px 0px 40px;
+              color: #e8e8e8;
+              margin-top:15%;
+              margin-left: 35%;
+              padding: 20px;
+              padding-top: 0px;
+              width: 30%; 
+            }
+            .info{
+              background: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              border: none;
+              font-size: 25px;
+            }
+            .alinha{
+              text-align: end;
+            }
+
+
+            .close {
+              margin-top: 10px;
+              color: #000;
+              float: right;
+              text-align: end;
+              font-size: 28px;
+              font-weight: bold;
+            }
+
+            .close:hover, .close:focus {
+              color: black;
+              text-decoration: none;
+              cursor: pointer;
+            }
+            .titulo{
+              margin-bottom: 50px;
+            }
+            .texto{
+              margin-bottom: 3px;
+            }
+            h1,h5{
+              color:#e8e8e8;
+            }
         </style>
     </head>
     <body>
@@ -94,6 +152,7 @@
           </div>
           </nav>
           <div class="organizacao">
+            <div class="alinha"><button class="info" onclick="Modal()">?</button></div>
             <h3 class="nome"></h3>
             <h1 class="elemento"></h1>
             <h2 class="num_atom"></h2>
@@ -105,7 +164,14 @@
             <button class="enviar" onclick="Enviar(-1,0)">Voltar Beta</button>
           </div>
           
-
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h1 class ="titulo">Explicação decaimentos radiotivos</h1>
+              <h5><p class ="texto">Os elementos instáveis (radioativos) se desintegram emitindo partículas alfa, beta, radiação, nêutrons e transformando-se em um outro elemento químico sucessivamente até encontrar estabilidade.</p></h5>
+              <h5><p class ="texto">Na radiação de uma partícula alfa libera-se do núcleo do átomo 2 prótons e 2 nêutrons, reduzindo em 2 o número atômico e em 4 a massa atômica.</p></h5>
+              <h5><p class ="texto">Na radiação de partículas beta negativas, um nêutron no núcleo transforma-se em um próton, aumentando em 1 o número atômico e mantendo a massa atômica.</p></h5>
+            </div>
           
 
           <script>
@@ -135,7 +201,20 @@
             }
 
 
-
+           function Modal(){
+            var modal = document.getElementById("myModal");
+            var btn = document.getElementById("myBtn");
+            var span = document.getElementsByClassName("close")[0];
+            modal.style.display = "block";
+            span.onclick = function() {
+              modal.style.display = "none";
+            }
+            window.onclick = function(event) {
+              if (event.target == modal) {
+              modal.style.display = "none";
+              }
+            }
+           }
           </script>
     </body>
   </html>
