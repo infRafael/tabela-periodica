@@ -319,14 +319,13 @@
 						document.querySelector(".e"+i).classList.add('elemento');
 						sorteado = Math.floor(Math.random() * 118);
 					}
-				}
-				if(sorteado == x || x < 0){
+				}else if(sorteado == x || x < 0){
 					total++;
 				
 					if(total == 118){
 						document.querySelector(".e"+sorteado).classList.add('elemento-acertado');
 						document.querySelector(".e"+sorteado).classList.remove('elemento');
-						document.querySelector('.elemento-sorteado').textContent = "Voce ganhou parabens!";
+						document.querySelector('.elemento-sorteado').textContent = "Você ganhou parabéns!";
 						document.querySelector('.pular').textContent = "Reiniciar";
 						ganhou = 1;
 					}else{
