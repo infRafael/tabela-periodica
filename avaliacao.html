@@ -23,42 +23,21 @@
 
             }
             .avaliacao{
+              background-color: #1f031a; 
+              border-radius: 20px;
               border: 10px solid transparent; 
               border-image: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
               border-image-slice: 1;
-              color: #1f031a;
               margin-top:10%;
-              margin-left: 30%;
+              margin-left: 35%;
               padding: 50px;
-              width: 40%; 
+              width: 30%; 
+              display:block;
               text-align: center;
-            }
-            
-            .star-rating{
-              margin: 0;
-              padding: 0;
-              box-sizing: border-box;
-              display: flex;
-              align-content: center;
-              justify-content: center;
-              user-select: none;
-              margin-left: 40%;
-              width: 20%;
-              border: 25px;
-            }
-            .star{
-              font-size: 4rem;
-              color: #ff9800;
-              outline: 0;
-              background-color: unset;
-              border:none;
-            }
-            .star:hover{
-              cursor: pointer;
-              outline: 0;
             }
             h2{
               margin-top: 10px;
+              margin-bottom: 70px;
               background: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
@@ -122,16 +101,8 @@
       
       <div class="avaliacao">
         <h1>AVALIAÇÃO</h1>
-        <h2>Como foi sua experiencia no nosso site?</h2>
-        <div class="star-rating">
-          <button class="star">&#9734;</button>
-          <button class="star">&#9734;</button>
-          <button class="star">&#9734;</button>
-          <button class="star">&#9734;</button>
-          <button class="star">&#9734;</button>
-      </div>
-        <h5 class="contador">0 de 5</h5>
-        <button class="enviar" onclick="Enviar()">Enviar</button>
+        <h2>Avalie nosso projeto</h2>
+        <img src="qrcode.png"  height="300" width="300">
         
 
       </div>
