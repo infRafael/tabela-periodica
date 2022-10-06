@@ -100,15 +100,32 @@
     background: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-	text-align: center;
 	margin-top: 40px;
 	margin-bottom: 50px;
+	text-align: center; 
   }
   .mudar_cor{
     color: #f3f9a6;
   }
   .mudar_cor:hover{
     color:#cbc634; 
+   }
+   .pular{
+	background-image: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
+    border: none;
+	border-radius: 10px;
+	color: #1f031a;
+	padding: 10px;
+	align-self: center;
+	text-decoration: none;
+	font-size: 20px;
+	margin-bottom: 30px;
+	width: 10%;
+   }
+   .alinhar{
+	display: flex;  
+	justify-content: center;  
+	align-items: center;  	
    }
   </style>
     </head>
@@ -138,7 +155,12 @@
           </ul>
         </div>
         </nav>
+
 		<h1 class="elemento-sorteado"></h1>
+		<div class="alinhar">
+			<button class="pular">Pular</button>
+		</div>
+		
         <div class="tabela">
 			<div class="elemento e0"><button onclick="Modal(0)"><div class="titulo">H</div><div class="texto">Hidrogênio</div></div></button>
 			<div class="empty-space-16"></div>
