@@ -20,9 +20,11 @@ button{
 
 .tabela{
   display: grid;
-  grid-template-columns: repeat(18, 4%);
-  grid-template-rows: repeat(9, 8%);
-  grid-gap: 0.4%;
+  width: 90%;
+  height: 90%;
+  grid-template-columns: repeat(18, 88px);
+  grid-template-rows: repeat(9, 88px);
+  grid-gap: 6px;
   margin: auto;
   justify-content: center;
   background: #1f031a;
