@@ -20,7 +20,7 @@ button{
 
 .tabela{
   display: grid;
-  grid-template-columns: repeat(18, 10%);
+  grid-template-columns: repeat(18, 4%);
   grid-template-rows: repeat(9, 88px);
   grid-gap: 6px;
   margin: auto;
