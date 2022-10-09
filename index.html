@@ -179,84 +179,35 @@
 			<p class ="informacoes"id="distribuicao"></p>
 			<p class ="informacoes"id="fusao"></p>
 			<p class ="informacoes"id="ebulicao"></p>
-			<p class ="informacoes"id="quem-descobriu"></p>
-			<p class ="informacoes"id="ano-descoberto"></p>
+			<p class ="informacoes"id="descobridor"></p>
+			<p class ="informacoes"id="ano"></p>
 		</div>
 		</div>
 		
 		<script type="text/javascript">
+			const api_url = 'https://api-elementos-quimicos.vercel.app/data.json';
+			var data;
+			if (data === undefined || data === null){
+			 	async function getData(){
+				    const response = await fetch(api_url);
+				    data = await response.json();
+			        }
+			     getData();
+			}
 			function Modal(z) {
-				var elementos = ["Hidrogênio","Hélio","Lítio","Berílio","Boro","Carbono","Nitrogênio","Oxigênio", "Flúor", "Neônio","Sódio","Magnésio","Alumínio","Silício","Fósforo",
-				"Enxofre","Cloro","Argônio","Potássio","Cálcio","Escândio","Titânio","Vanádio","Crômio","Manganês","Ferro","Cobalto","Níquel","Cobre","Zinco","Gálio","Germânio","Arsênio",
-				"Selênio","Bromo","Criptônio","Rubídio","Estrôncio","Ítrio","Zircônico","Nióbio","Molibdênio","Tecnécio","Rutênio","Ródio","Paládio","Prata","Cádmio","Índio","Estanho","Antimônio",
-				"Telúrio","Iodo","Xenônio","Césio","Bário","Lantânio","Cério","Praseodímio","Neodímio","Promécio","Samário","Európio","Gadolínio","Térbio","Disprósio","Hólmio","Érbio","Túlio","Itérbio",
-				"Lutécio","Háfnio","Tântalo","Tungstênio","Rênio","Ósmio","Irídio","Platina","Ouro","Mercúrio","Tálio","Chumbo","Bismuto","Polônio","Astato","Randônio","Frâncio","Rádio",
-				"Actínio","Tório","Protactínio","Urânio","Netúnio","Plutônio","Amerício","Cúrio","Berquélio","Califórnio","Einstênio","Férmio","Mendelévio","Nobélio","Laurêncio",
-				"Rutherfórdio","Dúbnio","Seabórgio","Bóhrio","Hássio","Meitnério","Darmstádtio","Roentgênio","Copernício","Nihônio","Fleróvio","Moscóvio","Livermório","Tenessino","Oganessônio"];
-				var simbolos = ["H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl","Ar","K","Ca","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Ga","Ge","As","Se","Br",
-				"Kr","Rb","Sr","Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd","In","Sn","Sb","Te","I","Xe","Cs","Ba","La","Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu","Hf",
-				"Ta","W","Re","Os","Ir","Pt","Au","Hg","Tl","Pb","Bi","Po","At","Rn","Fr","Ra","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr","Rf","Db","Sg","Bh","Hs","Mt",
-				"Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"];
-				var massa = ["1","4","6.94","9.01","10.81","12.01","14","15.99","18.99","20.18","22.99","24.30","26.98","28.08","30.97","32.06","35.45","39.94","39.09","40.07","44.95","47.86","50.94",
-				"51.99","54.93","55.84","58.93","58.69","63.54","65.94","69.72","72.64","74.92","78.96","79.90","83.79","85.46","87.62","88.90","91.22","92.90","95.94","98","101.7","102.90","106.42",
-				"107.82","112.41","114.81","118.71","121.76","127.6","126.90","131.29","132.90","137.32","138.90","140.11","140.90","144.24","145","150.36","151.96","157.25","158.92","162.5","164.93",
-				"167.25","168.93","173.04","174.96","178.49","180.94","183.84","186.20","190.23","192.21","195.08","196.96","200.59","204.38","207.2","208.98","210","210","220","223","226","227",
-				"232.03","231.03","238.02","237","244","243","247","247","251","252","257","258","259","262","261","262","266","264","277","268","271","272","277","286","289","288","293","294","294"];
-				var ano = ["1766","1868","1817","1797","1808","N/A","1772","1774","1868","1898","1807","1755","1825","1823","1669","N/A","1774","1894","1807","1808","1879","1791","1801","1797","1774",
-				"N/A","1735","1751","9000AC","1746","1875","1886","1250","1817","1826","1898","1861","1790","1794","1789","1801","1778","1937","1844","1803","1803","N/A","1817","1863","N/A","1600AC",
-				"1782","1811","1898","1860","1808","1839","1803","1885","1885","1945","1879","1901","1880","1843","1886","1878","1843","1879","1878","1907","1923","1802","1783","1925","1803","1803","1735",
-				"N/A","N/A","1861","N/A","1753","1898","1940","1900","1939","1898","1899","1828","1913","1789","1940","1940","1944","1944","1949","1950","1952","1953","1955","1958","1961","1964","1967","1974"
-				,"1981","1984","1982","1994","1994","1996","2003","1998","2003","2000","2010","2006"];
-				var familia = ["Metais Alcalinos","Gases Nobres","Metais Alcalinos","Metais Alcalinos-Terrosos","Família do Boro","Família do Carbono","Família do Nitrogênio","Calcogênios","Halogênios","Gases Nobres","Metais Alcalinos","Metais Alcalinos-Terrosos","Família do Boro","Família do Carbono","Família do Nitrogênio","Calcogênios","Halogênios","Gases Nobres","Metais Alcalinos","Metais Alcalinos-Terrosos","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Família do Boro","Família do Carbono","Família do Nitrogênio","Calcogênios","Halogênios",
-				"Gases Nobres","Metais Alcalinos","Metais Alcalinos-Terrosos","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Família do Boro","Família do Carbono","Família do Nitrogênio","Calcogênios","Halogênios","Gases Nobres","Metais Alcalinos","Metais Alcalinos-Terrosos","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição",
-				"Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Família do Boro","Família do Carbono","Família do Nitrogênio","Calcogênios","Halogênios","Gases Nobres","Metais Alcalinos","Metais Alcalinos-Terrosos","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Metais de Transição","Família do Boro",
-				"Família do Carbono","Família do Nitrogênio","Calcogênios","Halogênios","Gases Nobres"];
-				var classificacao = ["N/A","Gás nobre","Metal","Metal","Semimetal","Ametal","Ametal","Ametal","Ametal","Gás nobre","Metal","Metal","Metal","Semimetal","Ametal","Ametal","Ametal","Gás nobre"
-				,"Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Semimetal","Semimetal","Ametal","Ametal","Gás nobre","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Semimetal","Semimetal","Ametal","Gás nobre"
-				,"Metal","Metal","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","LantanídeoLantanídeo","Lantanídeo","Lantanídeo","Lantanídeo","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal",
-				"Semimetal","Ametal","Gás nobre","Metal","Metal","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Actinídeo","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Metal","Ametal","Gás nobre"];
-				var pessoa = ["Henry Cavendish", "William Ramsay, Norman Lockyer, Per Teodor Clave, Pierre Janssen", "Johan August Arfwedson", "Louis Nicolas Vauquelin, Martin Heinrich Klaproth", "Humphry Davy, Joseph Louis Gay-Lussac, Louis Jacques Thénard", 
-				"Antoine Lavoisier", "Daniel Rutherford", "Antoine Lavoisier, Joseph Priestley, Carl Wihelm Scheele", "Henri Moissan", "William Ramsay, Morris Travers", "Humphry Davy", "Humphry Davy, Joseph Black", "Hans christian osted", "Antoine Lavoisier, Jöns Jacob Berzelius", 
-				"Hennig Brand", "Antoine Lavoisier", "Carl Wilhelm Scheele", "John William Strutt, 3rd Baron Rayleigh, William Ramsay", "Humphry Davy", " Humphry Davy", "Per Teodor Cleve, Lars Fredrik Nilson", "Martin Heinrich Klaproth, William Gregor", "Andrés Manuel del Río", 
-				"Louis Nicolas Vauquelin, Martin Heinrich Klaproth", "Carl Wilhelm Scheele, Johan Gottlieb Gahn, Ignatius Gottfried Kaim", "N/A", "Georg Brandt", "Axel Fredrik Cronstedt", "N/A", "N/A", "Paul-Émile Lecoq de Boisbaudran", "Clemens Winkler", "Albertus Magnus", 
-				"Jöns Jacob Berzelius, Johan Gottlieb Gahn", "Antoine Jérôme Balard, Carl Jacob Löwig", "William Ramsay, Morris Travers", " Gustav Kirchhoff, Robert Bunsen", "Humphry Davy, Adair Crawford, William Cruickshank", "Johan Gadolin", "Martin Heinrich Klaproth", 
-				"Charles Hatchett", "Carl Wilhelm Scheele", "Emilio Segrè, Carlo Perrier", "Karl Ernst Claus", "William Hyde Wollaston", "William Hyde Wollaston", "N/A", "Friedrich Stromeyer, Karl Samuel Leberecht Hermann", "Ferdinand Reich", "N/A", "N/A", 
-				"Martin Heinrich Klaproth, Franz-Joseph Müller von Reichenstein", "Bernard Courtois", "William Ramsay, Morris Travers", "Gustav Kirchhoff, Robert Bunsen", "Humphry Davy, Carl Wilhelm Scheele", "Carl Gustaf Mosander", "Jöns Jacob Berzelius, Martin Heinrich Klaproth, Carl Gustaf Mosander", 
-				"N/A", "N/A", "Jacob A. Marinsky, Charles D. Coryell, Lawrence E. Glendenin", "Paul-Émile Lecoq de Boisbaudran, Eugène-Anatole Demarçay", "Paul-Émile Lecoq de Boisbaudran, Eugène-Anatole Demarçay", "Paul-Émile Lecoq de Boisbaudran, Jean Charles Galissard de Marignac", "Carl Gustaf Mosander", "Paul-Émile Lecoq de Boisbaudran", "Per Teodor Cleve, Marc Delafontaine, Jacques-Louis Soret", 
-				"Carl Gustaf Mosander", "Per Teodor Cleve", "Jean Charles Galissard de Marignac", "N/A", "George de Hevesy, Dirk Coster", "N/A", "Carl Wilhelm Scheele", "Walter Noddack, Ida Noddack, Otto Berg", "Smithson Tennant", "Smithson Tennant", "Antonio de Ulloa", "N/A", "N/A", "N/A", "N/A", "Claude François Geoffroy", "Marie Curie, Pierre Curie", "Emilio Segrè", "N/A", "N/A", "Marie Curie, Pierre Curie", 
-				"André-Louis Debierne", "Jöns Jacob Berzelius", "N/A", "Martin Heinrich Klaproth", "Edwin McMillan, Philip Abelson", "Glenn T. Seaborg, Edwin McMillan, Arthur Wahl, Joseph W. Kennedy", "Glenn T. Seaborg, Albert Ghiorso, Ralph A. James", " Glenn T. Seaborg, Albert Ghiorso, Ralph A. James", "Glenn T. Seaborg, Albert Ghiorso", "Glenn T. Seaborg, Albert Ghiorso",
-				"Glenn T. Seaborg, Albert Ghiorso", "Glenn T. Seaborg, Albert Ghiorso", "Glenn T. Seaborg, Albert Ghiorso", "Glenn T. Seaborg, Joint Institute for Nuclear Research", "Albert Ghiorso", "Albert Ghiorso, Joint Institute for Nuclear Research", "Albert Ghiorso, Joint Institute for Nuclear Research", "N/A", "N/A", "N/A", "N/A", "Sigurd Hofmann", 
-				"Victor Ninov, Sigurd Hofmann", "Victor Ninov, Sigurd Hofmann", "N/A", "Yuri Oganessian, Sigurd Hofmann, Flerov Laboratory of Nuclear Reactions", "Joint Institute for Nuclear Research", "Joint Institute for Nuclear Research, Yuri Oganessian", "Joint Institute for Nuclear Research, Yuri Oganessian", "Joint Institute for Nuclear Research, Yuri Oganessian"];
-				var distribuicao = ["1s1","1s2","1s2 2s1","1s2 2s2","1s2 2s2 2p1","1s2 2s2 2p2","1s2 2s2 2p3","1s2 2s2 2p4","1s2 2s2 2p5","1s2 2s2 2p6","[Ne] 3s1","[Ne] 3s2","[Ne] 3s2 3p1","[Ne] 3s2 3p2","[Ne] 3s2 3p3","[Ne] 3s2 3p4","[Ne] 3s2 3p5","[Ne] 3s2 3p6","[Ar] 4s1","[Ar] 4s2","[Ar] 3d1 4s2","[Ar] 3d2 4s2","[Ar] 3d3 4s2","[Ar] 3d5 4s1","[Ar] 3d5 4s2","[Ar] 3d6 4s2","[Ar] 3d7 4s2","[Ar] 3d8 4s2","[Ar] 3d10 4s1","[Ar] 3d10 4s2","[Ar] 3d10 4s2 4p1","[Ar] 3d10 4s2 4p2","[Ar] 3d10 4s2 4p3","[Ar] 3d10 4s2 4p4","[Ar] 3d10 4s2 4p5","[Ar] 3d10 4s2 4p6","[Kr] 5s1","[Kr] 5s2","[Kr] 4d1 5s2","[Kr] 4d2 5s2","[Kr] 4d4 5s1","[Kr] 4d5 5s1","[Kr] 4d5 5s2","[Kr] 4d7 5s1","[Kr] 4d8 5s1","[Kr] 4d10 5s0","[Kr] 4d10 5s1","[Kr] 4d10 5s2","[Kr] 4d10 5s2 5p1","[Kr] 4d10 5s2 5p2","[Kr] 4d10 5s2 5p3","[Kr] 4d10 5s2 5p4","[Kr] 4d10 5s2 5p5","[Kr] 4d10 5s2 5p6",
-				"[Xe] 6s1","[Xe] 6s2","[Xe] 5d1 6s2","[Xe] 4f1 5d1 6s2","[Xe] 4f3 6s2","[Xe] 4f4 6s2","[Xe]  4f5 6s2","[Xe] 4f6 6s2","[Xe] 4f7 6s2","[Xe] 4f7 5d1 6s2","[Xe] 4f9 6s2","[Xe] 4f10 6s2","[Xe] 4f11 6s2","[Xe] 4f12 6s2","[Xe] 4f13 6s2","[Xe] 4f14 6s2","4f14 5d1 6s2","[Xe] 4f14 5d2 6s2","[Xe] 4f14 5d3 6s2","[Xe] 4f14 5d4 6s2","[Xe] 4f14 5d5 6s2","[Xe] 4f14 5d6 6s2","[Xe] 4f14 5d7 6s2","[Xe] 4f14 5d9 6s1","[Xe] 4f14 5d10 6s1","[Xe] 4f14 5d10 6s2","[Xe] 4f14 5d10 6s2 6p1","[Xe] 4f14 5d10 6s2 6p2","[Xe] 4f14 5d10 6s2 6p3","[Xe] 4f14 5d10 6s2 6p4","[Xe] 4f14 5d10 6s2 6p5","[Xe] 4f14 5d10 6s2 6p6",
-				"[Rn] 7s1","[Rn] 7s2","[Rn] 6d1 7s2","[Rn] 6d2 7s2","[Rn] 5f2 6d1 7s2","[Rn] 5f3 6d1 7s2","[Rn] 5f4 6d1 7s2","[Rn] 5f6 7s2","[Rn] 5f7 7s2","[Rn] 5f7 6d1 7s2","[Rn] 5f9 7s2","[Rn] 5f10 7s2","[Rn] 5f11 7s2","[Rn] 5f12 7s2","[Rn] 5f13 7s2","[Rn] 5f14 7s2","[Rn] 5f14 7s2 7p1","[Rn] 5f14 6d2 7s2","[Rn] 5f14 6d3 7s2","[Rn] 5f14 6d4 7s2","[Rn] 5f14 6d5 7s2","[Rn] 5f14 6d6 7s2","[Rn] 5f14 6d7 7s2","[Rn] 5f14 6d9 7s1","[Rn] 5f14 6d10 7s1","[Rn] 5f14 6d10 7s2","[Rn] 5f14 6d10 7s2 7p1","[Rn] 5f14 6d10 7s2 7p2","[Rn] 5f14 6d10 7s2 7p3","[Rn] 5f14 6d10 7s2 7p4","[Rn] 5f14 6d10 7s2 7p5","[Rn] 5f14 6d10 7s2 7p6"];
-				var pontofusao = ["-259.16 °C","-272.2 °C"
-				,"180.54 °C","1287 °C","2076 °C","3550 °C","-210.01 °C","-218.79 °C","-219.62 °C","-248.59 °C"
-				,"97.794 °C","650 °C","660.32 °C","1410 °C","44.1 °C","112.8 °C","-101.5 °C","-189.35 °C"
-				,"63.5 °C","842 °C","1540.85 °C","1668 °C","1910 °C","1907 °C","1246 °C","1538 °C","1495 °C","1455 °C","1084.62 °C","419.53 °C","29.7646 °C","938.25 °C","816.85 °C","220.85 °C","-7.2 °C","-157.36 °C"
-				,"39.48 °C","777 °C","1526 °C","1854.85 °C","2477 °C","2623 °C","2203.85 °C","2334 °C","1962.85 °C","1554.9 °C","961.78 °C","321.07 °C","156.63 °C","231.93 °C","630.63 °C","449.51 °C","113.7 °C","-111.75 °C"
-				,"28.44 °C","727 °C","920 °C","795 °C","930.85 °C","1020.85 °C","1041.85 °C","1072 °C","826 °C","1311.85 °C","1355.85 °C","1411.85 °C","1474 °C","1528.85 °C","1544.85 °C","819 °C","1663 °C","2227 °C","3019.85 °C","3421.85 °C","3185 °C","3033 °C","2446 °C","1768.3 °C","1064.18 °C","-38.829 °C","304 °C","327.5 °C","271.5 °C","254 °C","301.85 °C","-71 °C"
-				,"27 °C","700 °C","1050 °C","1754.85 °C","1568 °C","1132.2 °C","644 °C","639.4 °C","1176 °C","1346.85 °C","984.85 °C","898.85 °C","860 °C","1526.85 °C","826.85 °C","826.85 °C","1627 °C","2100 °C","N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A","430 °C","N/A","400 °C","N/A","N/A","N/A"];
-				var pontoebulicao = ["-252.87 °C","-268.93 °C","1342 °C","2469 °C","4000 °C","4287 °C","-195.79 °C","-182.962 °C","-188.11 °C","-246.046 °C","882.85 °C","1091 °C","2470 °C","2355 °C","280.5 °C","444.6 °C","-34.04 °C","-185.85 °C"
-				,"758.85 °C","1483.85 °C","2835.85 °C","3286.85 °C","3407 °C","2671.85 °C","2061 °C","2862 °C","2869.85 °C","2730 °C","2562 °C","907 °C","2400 °C","2833 °C","613 °C","684.85 °C","58.8 °C","-153.415 °C"
-				,"688 °C","1381.85 °C","3337.85 °C","4408.85 °C","4927 °C","4638.85 °C","4264.85 °C","4150 °C","3696.85 °C","2963 °C","2162 °C","766.85 °C","2072 °C","2602 °C","1586.85 °C","987.85 °C","184.3 °C","-108.12 °C"
-				,"670.85 °C","1897 °C","3463.85 °C","3257 °C","3520 °C","3073.85 °C","2999.85 °C","1793.85 °C","1529 °C","3271.85 °C","3230 °C","2566.85 °C","2694.85 °C","2868 °C","1950 °C","1195.85 °C","3402 °C","4601.85 °C","5456.85 °C","5555 °C","5596.85 °C","5026.85 °C","4428 °C","3825 °C","2700 °C","356.73 °C","1472.85 °C","1749 °C","1564 °C","962 °C","336.85 °C","-61.7 °C"
-				,"676.85 °C","1737 °C","3196.85 °C","4786.85 °C","4000 °C","4131 °C","3901.85 °C","3231.85 °C","2606.85 °C","3109.85 °C","2627 °C","1472 °C","996 °C","N/A","N/A","N/A","N/A","5500 °C","N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A","1130 °C","-60 °C","1100 °C","N/A","610 °C","N/A"];
-			
-				
-				document.querySelector('#nome-elemento').textContent = ''+elementos[z];
-				document.querySelector('#numero-atomico').textContent = 'Número Atômico: '+ (z+1);
-				document.querySelector('#massa').textContent = 'Massa Atômica: '+ massa[z] +'u';
-				document.querySelector('#simbolo').textContent = 'Símbolo: '+ simbolos[z];
-				document.querySelector('#quem-descobriu').textContent = 'Descoberto por: '+ pessoa[z];
-				document.querySelector('#ano-descoberto').textContent = 'Descoberto em: '+ ano[z];
-				document.querySelector('#familia').textContent = 'Família: '+ familia[z];
-				document.querySelector('#classificacao').textContent = 'Classificação: '+ classificacao[z];
-				document.querySelector('#distribuicao').textContent = 'Distribuição Eletrônica: '+ distribuicao[z];
-				document.querySelector('#fusao').textContent = 'Ponto de fusão: '+ pontofusao[z];
-				document.querySelector('#ebulicao').textContent = 'Ponto de ebulição: '+ pontoebulicao[z];
 
-	
+				document.getElementById('nome-elemento').textContent = data[z].nome;
+				document.getElementById('numero-atomico').textContent = 'Número Atômico: ' + data[z].numero;
+				document.getElementById('simbolo').textContent = 'Símbolo: ' + data[z].simbolo;
+				document.getElementById('massa').textContent = 'Massa Atômica:' + data[z].massa + 'u';
+				document.getElementById('familia').textContent = 'Família: '  + data[z].familia;
+				document.getElementById('classificacao').textContent = 'Classificação: ' + data[z].classificacao;
+				document.getElementById('distribuicao').textContent = 'Distribuição: ' + data[z].distribuicao;
+				document.getElementById('descobridor').textContent = 'Descoberto por: ' + data[z].descobridor;
+				document.getElementById('ano').textContent = 'Descoberto em: ' + data[z].ano;
+				document.getElementById('fusao').textContent = 'Ponto de fusão: ' + data[z].fusao;
+				document.getElementById('ebulicao').textContent = 'Ponto de ebulição: ' + data[z].ebulicao;
+
 				var modal = document.getElementById("myModal");
 				var btn = document.getElementById("myBtn");
 				var span = document.getElementsByClassName("close")[0];
@@ -265,11 +216,11 @@
 			 		modal.style.display = "none";
 				}
 				window.onclick = function(event) {
-			  	if (event.target == modal) {
-					modal.style.display = "none";
-			  	}
+					if (event.target == modal) {
+						modal.style.display = "none";
+					}
+				}
 				
-			}
 			}
 		</script>
 	</body>
